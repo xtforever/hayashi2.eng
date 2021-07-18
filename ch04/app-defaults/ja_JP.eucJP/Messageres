@@ -1,0 +1,14 @@
+*fontList:                             *-14-*:
+Messageres.title:                      複数行コンパウンド・ストリング
+Messageres*panel.orientation:          HORIZONTAL
+Messageres*button.labelString:         メッセージ
+
+Messageres*dialog.dialogTitle:         メッセージ
+Messageres*dialog.okLabelString:       了解
+Messageres*dialog.cancelLabelString:   取消
+Messageres*dialog.helpLabelString:     ヘルプ
+
+Messageres*message:  \
+複数行にわたる\n\
+ながあ〜い\n\
+メッセージ

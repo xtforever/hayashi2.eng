@@ -1,0 +1,14 @@
+*fontList:                         *-14-*:
+Select2type.title:                 複数タイプ
+
+Select2type*box.isAligned:         False
+Select2type*box*spacing:           0
+Select2type*figure.labelType:      PIXMAP
+Select2type*figure.alignment:      ALIGNMENT_CENTER
+Select2type*figure.marginTop:      4
+Select2type*title.labelString:     \  
+Select2type*title.alignment:       ALIGNMENT_CENTER
+Select2type*title.marginBottom:    4
+
+Select2type*copy.labelString:      コピー
+Select2type*paste.labelString:     ペースト

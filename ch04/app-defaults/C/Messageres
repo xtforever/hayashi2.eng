@@ -1,0 +1,11 @@
+*fontList:                             *-14-*:
+Messageres.title:                      Multiline Compound String
+Messageres*panel.orientation:          HORIZONTAL
+Messageres*button.labelString:         Message
+
+Messageres*dialog.dialogTitle:         Message
+
+Messageres*message:  \
+Multiline\n\
+lo~~ng\n\
+message

@@ -1,0 +1,34 @@
+*fontList:                            *-14-*:
+Selectincr.title:                     Incremental Transfer
+
+! Locate "File Name" area and [Open] button at the top
+Selectincr*field.topAttachment:       ATTACH_FORM
+Selectincr*field.leftAttachment:      ATTACH_FORM
+Selectincr*field.rightAttachment:     ATTACH_FORM
+
+! Locate text wdiget at the center
+Selectincr*textSW.topAttachment:      ATTACH_WIDGET
+Selectincr*textSW.leftAttachment:     ATTACH_FORM
+Selectincr*textSW.rightAttachment:    ATTACH_FORM
+Selectincr*textSW.bottomAttachment:   ATTACH_WIDGET
+
+! Locate [Copy] and [Paste] button at the bottom
+Selectincr*control.leftAttachment:    ATTACH_FORM
+Selectincr*control.rightAttachment:   ATTACH_FORM
+Selectincr*control.bottomAttachment:  ATTACH_FORM
+
+! List "File Name:", input area, and [Open] button horizontally
+Selectincr*field.orientation:         HORIZONTAL
+Selectincr*label.labelString:         File Name:
+Selectincr*fname.columns:             10
+Selectincr*open.labelString:          Open
+
+! Multiline text widget
+Selectincr*text.editMode:             MULTI_LINE_EDIT
+Selectincr*text.rows:                 10
+Selectincr*text.columns:              24
+
+! List [Copy] and [Paste] buttons horizontally
+Selectincr*control.orientation:       HORIZONTAL
+Selectincr*copy.labelString:          Copy
+Selectincr*paste.labelString:         Paste

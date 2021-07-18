@@ -1,0 +1,5 @@
+*fontList:                       *-14-*:
+Wmstate.title:                   ウィンドウ状態の変化と監視
+
+Wmstate*withdraw.labelString:    撤退 -> ｱｲｺﾝ -> 通常
+Wmstate*iconify.labelString:     ｱｲｺﾝ -> 撤退 -> 通常

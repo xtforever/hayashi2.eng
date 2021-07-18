@@ -1,0 +1,15 @@
+*fontList:                              *-14-*:
+
+Dialogpos.title:                        ダイアログの位置
+
+Dialogpos*button1.labelString:          ボタン１
+Dialogpos*button2.labelString:          ボタン２
+Dialogpos*button3.labelString:          ボタン３
+Dialogpos*XmPushButton.marginWidth:     60
+Dialogpos*XmPushButton.marginHeight:    30
+
+Dialogpos*dialog.dialogTitle:           ダイアログ
+Dialogpos*dialog.messageString:         メッセージ
+Dialogpos*dialog.okLabelString:         了解
+Dialogpos*dialog.cancelLabelString:     取消
+Dialogpos*dialog.helpLabelString:       ヘルプ

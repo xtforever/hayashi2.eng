@@ -1,0 +1,14 @@
+*fontList:                                  *-14-*:
+
+Workingdialog.title:                       Application
+Workingdialog.iconName:                    Icon
+
+Workingdialog*button.labelString:          Button
+Workingdialog*button.marginWidth:          100
+
+Workingdialog*dialog.dialogTitle:          Working Dialog
+Workingdialog*dialog.messageString:        Running
+!Workingdialog*dialog.okLabelString:        Close
+!Workingdialog*dialog.okLabelString:        Stop
+Workingdialog*dialog.okLabelString:        Pause
+Workingdialog*dialog.cancelLabelString:    Resume

@@ -1,0 +1,7 @@
+Rubberband.title:                      ラバーバンド
+Rubberband*canvas.topAttachment:       ATTACH_FORM
+Rubberband*canvas.bottomAttachment:    ATTACH_FORM
+Rubberband*canvas.leftAttachment:      ATTACH_FORM
+Rubberband*canvas.rightAttachment:     ATTACH_FORM
+Rubberband*canvas.width:               300
+Rubberband*canvas.height:              300

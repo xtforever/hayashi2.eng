@@ -1,0 +1,6 @@
+!*fontList:                    *-14-*:
+!*fontList:                    *-16-*:
+*fontList:                    *-24-*:
+
+Cssize*label.marginWidth:     40
+Cssize*label.marginHeight:    20

@@ -1,0 +1,17 @@
+*fontList:                               *-14-*:
+
+Resconvert.allowShellResize:             True
+Resconvert*panel.isAligned:              False
+Resconvert*panel*alignment:              ALIGNMENT_CENTER
+Resconvert*tgt_label.labelString:        Original Label
+Resconvert*tgt_label.recomputeSize:      True
+Resconvert*button.labelString:           Apply
+
+Resconvert*field.orientation:            HORIZONTAL
+Resconvert*field.packing:                PACK_COLUMN
+Resconvert*field.numColumns:             2
+Resconvert*field.isAligned:              False
+Resconvert*panel.field*alignment:        ALIGNMENT_END
+Resconvert*color_title.labelString:      Background:
+Resconvert*label_title.labelString:      Label:
+Resconvert*field.XmTextField.columns:    6

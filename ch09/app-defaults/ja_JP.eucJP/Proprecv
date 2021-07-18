@@ -1,0 +1,5 @@
+*fontList:                     *-14-*:
+Proprecv.title:                プロパティ更新の合図を受け取る
+Proprecv*label.labelString:    Waiting for Notify
+Proprecv*label.width:          200
+Proprecv*label.height:         50

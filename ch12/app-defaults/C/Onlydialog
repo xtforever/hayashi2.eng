@@ -1,0 +1,10 @@
+*fontList:                              *-14-*:
+
+Onlydialog*dialog.dialogTitle:          Show only dialog
+Onlydialog.mappedWhenManaged:           False
+
+Onlydialog*dialog.defaultPosition:      False
+Onlydialog*dialog.x:                    500
+Onlydialog*dialog.y:                    400
+
+Onlydialog*dialog.messageString:        Message

@@ -1,0 +1,8 @@
+*fontList:                           *-14-*:
+
+Titlepg*button.labelString:          ボタン
+Titlepg*button.marginWidth:          100
+Titlepg*dialog.messageString:        メッセージ
+Titlepg*dialog.okLabelString:        了解
+Titlepg*dialog.cancelLabelString:    取消
+Titlepg*dialog.helpLabelString:      ヘルプ

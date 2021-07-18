@@ -1,0 +1,34 @@
+*fontList:                            *-14-*:
+Clipbyname.title:                     クリップボード: 名前コピー
+
+! ファイル名入力領域と [オープン] ボタンを最上部に置く
+Clipbyname*field.topAttachment:       ATTACH_FORM
+Clipbyname*field.leftAttachment:      ATTACH_FORM
+Clipbyname*field.rightAttachment:     ATTACH_FORM
+
+! テキスト・ウィジェットを中央に置く
+Clipbyname*textSW.topAttachment:      ATTACH_WIDGET
+Clipbyname*textSW.leftAttachment:     ATTACH_FORM
+Clipbyname*textSW.rightAttachment:    ATTACH_FORM
+Clipbyname*textSW.bottomAttachment:   ATTACH_WIDGET
+
+! [コピー] と [ペースト] ボタンは最下部に置く
+Clipbyname*control.leftAttachment:    ATTACH_FORM
+Clipbyname*control.rightAttachment:   ATTACH_FORM
+Clipbyname*control.bottomAttachment:  ATTACH_FORM
+
+! "ファイル名:"，入力領域，[オープン] を横に並べる
+Clipbyname*field.orientation:         HORIZONTAL
+Clipbyname*label.labelString:         ファイル名:
+Clipbyname*fname.columns:             10
+Clipbyname*open.labelString:          オープン
+
+! テキスト・ウィジェットは複数行
+Clipbyname*text.editMode:             MULTI_LINE_EDIT
+Clipbyname*text.rows:                 10
+Clipbyname*text.columns:              24
+
+! [コピー] と [ペースト] ボタンを横に並べる
+Clipbyname*control.orientation:       HORIZONTAL
+Clipbyname*copy.labelString:          コピー
+Clipbyname*paste.labelString:         ペースト

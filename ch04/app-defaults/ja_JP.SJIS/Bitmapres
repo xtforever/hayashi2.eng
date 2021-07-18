@@ -1,0 +1,9 @@
+Bitmapres*canvas.topAttachment:       ATTACH_FORM
+Bitmapres*canvas.bottomAttachment:    ATTACH_FORM
+Bitmapres*canvas.leftAttachment:      ATTACH_FORM
+Bitmapres*canvas.rightAttachment:     ATTACH_FORM
+Bitmapres*canvas.width:               100
+Bitmapres*canvas.height:              100
+
+Bitmapres*canvas.bitmap:              terminal
+!Bitmapres*canvas.bitmap:              flagup

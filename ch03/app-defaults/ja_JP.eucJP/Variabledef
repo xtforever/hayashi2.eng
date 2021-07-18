@@ -1,0 +1,4 @@
+*fontList:             *-14-*:
+Variabledef.size:      100
+Variabledef.label:     独自のラベル
+!Variabledef.margin:    False

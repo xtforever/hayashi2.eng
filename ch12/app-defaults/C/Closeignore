@@ -1,0 +1,9 @@
+*fontList:                               *-14-*:
+
+Closeignore.title:                       Ignore Close button
+Closeignore*dialog.dialogTitle:          Dialog
+
+Closeignore*button.labelString:          Button
+Closeignore*button.marginWidth:          50
+Closeignore*button.marginHeight:         30
+Closeignore*dialog.messageString:        Message

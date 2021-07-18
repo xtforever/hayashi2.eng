@@ -1,0 +1,14 @@
+*fontList:                            *-14-*:
+
+Workingdialog.title:                       アプリケーション名
+Workingdialog.iconName:                    ｱｲｺﾝ名
+
+Workingdialog*button.labelString:          ボタン
+Workingdialog*button.marginWidth:          100
+
+Workingdialog*dialog.dialogTitle:          ワーキング・ダイアログ
+Workingdialog*dialog.messageString:        実行中
+!Workingdialog*dialog.okLabelString:        クローズ
+!Workingdialog*dialog.okLabelString:        停止
+Workingdialog*dialog.okLabelString:        休止
+Workingdialog*dialog.cancelLabelString:    再開

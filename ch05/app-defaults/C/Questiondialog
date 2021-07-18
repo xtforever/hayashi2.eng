@@ -1,0 +1,12 @@
+*fontList:                                  *-14-*:
+
+Questiondialog.title:                       Application
+Questiondialog.iconName:                    Icon
+
+Questiondialog*button.labelString:          Button
+Questiondialog*button.marginWidth:          100
+
+Questiondialog*dialog.dialogTitle:          Question Dialog
+Questiondialog*dialog.messageString:        Question
+Questiondialog*dialog.okLabelString:        Yes
+Questiondialog*nobutton.labelString:        No

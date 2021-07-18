@@ -1,0 +1,10 @@
+*fontList:                            *-14-*:
+
+Titleres.title:                       Application Name
+Titleres.iconName:                    IconName
+Titleres*dialog.dialogTitle:          Dialog Name
+!Titleres*dialog_popup.title:          Dialog Name
+
+Titleres*button.labelString:          Button
+Titleres*button.marginWidth:          100
+Titleres*dialog.messageString:        Message

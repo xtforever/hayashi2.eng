@@ -1,0 +1,6 @@
+*fontList:                         *-14-*:
+Clipnewform.title:                 Clipboard: New format
+Clipnewform*clock.labelString:     \  
+Clipnewform*control.orientation:   HORIZONTAL
+Clipnewform*copy.labelString:      Copy
+Clipnewform*paste.labelString:     Paste

@@ -1,0 +1,7 @@
+*fontList:                      *-14-*:
+
+Mwmmenu.title:                  Add Mwm menu
+
+Mwmmenu*button.labelString:     Button
+Mwmmenu*button.width:           300
+Mwmmenu*button.height:          200

@@ -1,0 +1,12 @@
+*fontList:                            *-14-*:
+
+Titleres.title:                       アプリケーション名
+Titleres.iconName:                    ｱｲｺﾝ名
+!Titleres*dialog.dialogTitle:          ダイアログ名
+Titleres*dialog_popup.title:          ダイアログ名
+
+Titleres*button.labelString:          ボタン
+Titleres*dialog.messageString:        メッセージ
+Titleres*dialog.okLabelString:        了解
+Titleres*dialog.cancelLabelString:    取消
+Titleres*dialog.helpLabelString:      ヘルプ

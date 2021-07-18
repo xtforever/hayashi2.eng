@@ -1,0 +1,113 @@
+*fontList:                                   *-courier-medium-r-normal--17-*:
+Menulabels.title:                            Menu Labels
+
+Menulabels*menubar.button_0.labelString:     File
+Menulabels*menubar.button_0.mnemonic:        F
+Menulabels*filemenu.button_0.labelString:      New
+Menulabels*filemenu.button_0.mnemonic:         N
+Menulabels*filemenu.button_1.labelString:      Open...
+Menulabels*filemenu.button_1.mnemonic:         O
+Menulabels*filemenu.button_2.labelString:      Save
+Menulabels*filemenu.button_2.mnemonic:         S
+Menulabels*filemenu.button_3.labelString:      Save As...
+Menulabels*filemenu.button_3.mnemonic:              A
+Menulabels*filemenu.button_4.labelString:      Print
+Menulabels*filemenu.button_4.mnemonic:         P
+Menulabels*filemenu.button_5.labelString:      Close
+Menulabels*filemenu.button_5.mnemonic:         C
+Menulabels*filemenu.button_6.labelString:      Exit
+Menulabels*filemenu.button_6.mnemonic:          x
+
+
+Menulabels*menubar.button_1.labelString:     Edit
+Menulabels*menubar.button_1.mnemonic:        E
+Menulabels*editmenu.button_0.labelString:      Undo
+Menulabels*editmenu.button_0.mnemonic:         U
+Menulabels*editmenu.button_0.accelerator:                Meta<Key>backspace
+Menulabels*editmenu.button_0.acceleratorText:            Alt+Backspace
+Menulabels*editmenu.button_1.labelString:      Cut
+Menulabels*editmenu.button_1.mnemonic:           t
+Menulabels*editmenu.button_1.accelerator:                Shift<Key>Del
+Menulabels*editmenu.button_1.acceleratorText:            Shift+Del
+Menulabels*editmenu.button_2.labelString:      Copy
+Menulabels*editmenu.button_2.mnemonic:         C
+Menulabels*editmenu.button_2.accelerator:                Ctrl<Key>Ins
+Menulabels*editmenu.button_2.acceleratorText:            Ctrl+Ins
+Menulabels*editmenu.button_3.labelString:      Copy Link
+Menulabels*editmenu.button_3.mnemonic:                 k
+Menulabels*editmenu.button_4.labelString:      Paste
+Menulabels*editmenu.button_4.mnemonic:         P
+Menulabels*editmenu.button_4.accelerator:                Shift<Key>Ins
+Menulabels*editmenu.button_4.acceleratorText:            Shift+Ins
+Menulabels*editmenu.button_5.labelString:      Paste Link
+Menulabels*editmenu.button_5.mnemonic:               L
+Menulabels*editmenu.button_6.labelString:      Clear
+Menulabels*editmenu.button_6.mnemonic:           e
+Menulabels*editmenu.button_7.labelString:      Delete
+Menulabels*editmenu.button_7.mnemonic:         D
+Menulabels*editmenu.button_8.labelString:      Select All
+Menulabels*editmenu.button_8.accelerator:                Ctrl<Key>slash
+Menulabels*editmenu.button_8.acceleratorText:            Ctrl+/
+Menulabels*editmenu.button_9.labelString:      Deselect All
+Menulabels*editmenu.button_9.accelerator:                Ctrl<Key>backslash
+Menulabels*editmenu.button_9.acceleratorText:            Ctrl+\\
+Menulabels*editmenu.button_10.labelString:     Select Pasted
+Menulabels*editmenu.button_11.labelString:     Reselect
+Menulabels*editmenu.button_11.accelerator:                Meta<Key>Ins
+Menulabels*editmenu.button_11.acceleratorText:            Alt+Ins
+Menulabels*editmenu.button_12.labelString:     Promote
+Menulabels*editmenu.button_12.accelerator:                Meta<Key>Ins
+Menulabels*editmenu.button_12.acceleratorText:            Alt+Ins
+
+
+Menulabels*menubar.button_2.labelString:     Help
+Menulabels*menubar.button_2.mnemonic:        H
+Menulabels*secondhelp.button_0.labelString:      Context-Sensitive Help
+Menulabels*secondhelp.button_0.mnemonic:         C
+Menulabels*secondhelp.button_0.accelerator:                Shift<Key>F1
+Menulabels*secondhelp.button_0.acceleratorText:            Shift+Help
+Menulabels*secondhelp.button_1.labelString:      Overview
+Menulabels*secondhelp.button_1.mnemonic:         O
+Menulabels*secondhelp.button_2.labelString:      Index
+Menulabels*secondhelp.button_2.mnemonic:         I
+Menulabels*secondhelp.button_3.labelString:      Keyboard
+Menulabels*secondhelp.button_3.mnemonic:         K
+Menulabels*secondhelp.button_4.labelString:      Tutorial
+Menulabels*secondhelp.button_4.mnemonic:         T
+Menulabels*secondhelp.button_5.labelString:      Using Help
+Menulabels*secondhelp.button_5.mnemonic:               H
+Menulabels*secondhelp.button_6.labelString:      Product Information
+Menulabels*secondhelp.button_6.mnemonic:         P
+
+
+Menulabels*menubar.helpbutton.labelString:   Help
+Menulabels*menubar.helpbutton.mnemonic:      H
+Menulabels*helpmenu.button_0.labelString:      On Context
+Menulabels*helpmenu.button_0.mnemonic:            C
+Menulabels*helpmenu.button_0.accelerator:                     Shift<Key>F1
+Menulabels*helpmenu.button_0.acceleratorText:                 Shift+Help
+Menulabels*helpmenu.button_1.labelString:      On Help
+Menulabels*helpmenu.button_1.mnemonic:            H
+Menulabels*helpmenu.button_2.labelString:      On Window
+Menulabels*helpmenu.button_2.mnemonic:            W
+Menulabels*helpmenu.button_3.labelString:      On Keys
+Menulabels*helpmenu.button_3.mnemonic:            K
+Menulabels*helpmenu.button_4.labelString:      Index
+Menulabels*helpmenu.button_4.mnemonic:         I
+Menulabels*helpmenu.button_5.labelString:      Tutorial
+Menulabels*helpmenu.button_5.mnemonic:         T
+Menulabels*helpmenu.button_6.labelString:      On Version
+Menulabels*helpmenu.button_6.mnemonic:            V
+
+Menulabels*mainwin.scrollBarDisplayPolicy:    STATIC
+Menulabels*mainwin.scrollingPolicy:           AUTOMATIC
+
+Menulabels*text.editMode:        MULTI_LINE_EDIT
+Menulabels*text.columns:         40
+Menulabels*text.rows:            20
+
+Menulabels*command.orientation:  HORIZONTAL
+Menulabels*copy.labelString:     Copy
+Menulabels*cut.labelString:      Cut
+Menulabels*paste.labelString:    Paste
+

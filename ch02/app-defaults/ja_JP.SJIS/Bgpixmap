@@ -1,0 +1,11 @@
+*fontList:                          *-24-*:
+*foreground:                        blue
+*background:                        green
+Bgpixmap.title:                     背景パターン
+Bgpixmap*label.labelString:         ラベル
+Bgpixmap*label.topAttachment:       ATTACH_FORM
+Bgpixmap*label.bottomAttachment:    ATTACH_FORM
+Bgpixmap*label.leftAttachment:      ATTACH_FORM
+Bgpixmap*label.rightAttachment:     ATTACH_FORM
+Bgpixmap*label.width:               200
+Bgpixmap*label.height:              100

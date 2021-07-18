@@ -1,0 +1,4 @@
+*fontList:                      *-14-*:
+Cutbuffer.title:                カットバッファ
+Cutbuffer*store.labelString:    コピー
+Cutbuffer*fetch.labelString:    ペースト

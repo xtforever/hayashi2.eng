@@ -1,0 +1,9 @@
+*fontList:                      *-14-*:
+Textcopy.title:                 Clipboard
+Textcopy*text.editMode:         MULTI_LINE_EDIT
+Textcopy*text.rows:             5
+Textcopy*text.columns:          10
+Textcopy*control.orientation:   HORIZONTAL
+Textcopy*copy.labelString:      Copy
+Textcopy*cut.labelString:       Cut
+Textcopy*paste.labelString:     Paste

@@ -1,0 +1,10 @@
+*fontList:                              *-14-*:
+Textwcsfunc.title:                      数字の入力
+
+Textwcsfunc*button.labelString:         確認
+
+Textwcsfunc*error.dialogTitle:          エラー
+Textwcsfunc*error.messageString:        数字だけを入力してください．
+Textwcsfunc*error.okLabelString:        了解
+Textwcsfunc*error.cancelLabelString:    取消
+Textwcsfunc*error.helpLabelString:      ヘルプ

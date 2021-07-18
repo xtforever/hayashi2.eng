@@ -1,0 +1,6 @@
+*fontList:                         *-14-*:
+Selectparam.title:                 Selection Parameter
+Selectparam*text.columns:          10
+Selectparam*copy.labelString:      Copy
+Selectparam*paste0.labelString:    Absolute Path
+Selectparam*paste1.labelString:    File Name

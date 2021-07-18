@@ -1,0 +1,25 @@
+*fontList:                             *-14-*:
+Sessionsave.title:                     Save session
+
+! Locate "File Name" area and [Open] button at the top
+Sessionsave*field.topAttachment:       ATTACH_FORM
+Sessionsave*field.leftAttachment:      ATTACH_FORM
+Sessionsave*field.rightAttachment:     ATTACH_FORM
+
+! Locate text wdiget at the center
+Sessionsave*textSW.topAttachment:      ATTACH_WIDGET
+Sessionsave*textSW.leftAttachment:     ATTACH_FORM
+Sessionsave*textSW.rightAttachment:    ATTACH_FORM
+Sessionsave*textSW.bottomAttachment:   ATTACH_FORM
+
+! List "File Name:", input area, and [Open] button horizontally
+Sessionsave*field.orientation:         HORIZONTAL
+Sessionsave*label.labelString:         File Name:
+Sessionsave*fname.columns:             10
+Sessionsave*open.labelString:          Open
+Sessionsave*save.labelString:          Save
+
+! Multiline text widget
+Sessionsave*text.editMode:             MULTI_LINE_EDIT
+Sessionsave*text.rows:                 10
+Sessionsave*text.columns:              24

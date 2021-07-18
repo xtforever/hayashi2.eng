@@ -1,0 +1,26 @@
+Switchmsg.title:                            Switch Message
+Switchmsg*fontList:                         -*-medium-r-normal--14-*:
+
+Switchmsg*menubar.button_0.labelString:     File
+Switchmsg*menubar.button_0.mnemonic:        F
+Switchmsg*filemenu.button_0.labelString:      New
+Switchmsg*filemenu.button_0.mnemonic:         N
+Switchmsg*filemenu.button_1.labelString:      Open...
+Switchmsg*filemenu.button_1.mnemonic:         O
+Switchmsg*filemenu.button_1.accelerator:               Ctrl<Key>o
+Switchmsg*filemenu.button_1.acceleratorText:           Ctrl+O
+Switchmsg*filemenu.button_2.labelString:      Save
+Switchmsg*filemenu.button_2.mnemonic:         S
+Switchmsg*filemenu.button_3.labelString:      Exit
+Switchmsg*filemenu.button_3.mnemonic:          x
+Switchmsg*filemenu.button_3.accelerator:               Alt<Key>F4
+Switchmsg*filemenu.button_3.acceleratorText:           Alt+F4
+
+Switchmsg*mainwin.scrollBarDisplayPolicy:    STATIC
+Switchmsg*mainwin.scrollingPolicy:           AUTOMATIC
+
+Switchmsg*work.text.editMode:                MULTI_LINE_EDIT
+Switchmsg*work.text.columns:                 80
+Switchmsg*work.text.rows:                    200
+
+Switchmsg*question.dialogTitle:              Confirmation

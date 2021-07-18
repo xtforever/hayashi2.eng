@@ -1,0 +1,8 @@
+*fontList:                       *-14-*:
+Clipboard.title:                 Clipboard
+Clipboard*text.editMode:         MULTI_LINE_EDIT
+Clipboard*text.rows:             5
+Clipboard*text.columns:          10
+Clipboard*control.orientation:   HORIZONTAL
+Clipboard*copy.labelString:      Copy
+Clipboard*paste.labelString:     Paste

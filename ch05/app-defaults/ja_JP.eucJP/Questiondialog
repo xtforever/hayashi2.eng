@@ -1,0 +1,14 @@
+*fontList:                            *-14-*:
+
+Questiondialog.title:                       アプリケーション名
+Questiondialog.iconName:                    ｱｲｺﾝ名
+
+Questiondialog*button.labelString:          ボタン
+Questiondialog*button.marginWidth:          100
+
+Questiondialog*dialog.dialogTitle:          クエスチョン・ダイアログ
+Questiondialog*dialog.messageString:        質問
+Questiondialog*dialog.okLabelString:        はい
+Questiondialog*nobutton.labelString:        いいえ
+Questiondialog*dialog.cancelLabelString:    取消
+Questiondialog*dialog.helpLabelString:      ヘルプ

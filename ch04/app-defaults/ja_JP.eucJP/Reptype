@@ -1,0 +1,8 @@
+*fontList:                     *-14-*:
+!Reptype.location:              left
+Reptype*panel.width:           400
+Reptype*panel.height:          300
+Reptype*button.y:              100
+Reptype*button.width:          100
+Reptype*button.height:         100
+Reptype*button.labelString:    ¥Ü¥¿¥ó

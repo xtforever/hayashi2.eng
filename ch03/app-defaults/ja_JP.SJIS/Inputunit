@@ -1,0 +1,5 @@
+*fontList:        *-14-*:
+!*inputByMm:       False
+*mmLabel:         ミリメートル
+*inchLabel:       インチ
+*text.columns:    5

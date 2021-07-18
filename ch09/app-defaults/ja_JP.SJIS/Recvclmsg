@@ -1,0 +1,5 @@
+*fontList:                      *-14-*:
+Recvclmsg.title:                イベントを受信
+Recvclmsg*label.labelString:    \ 
+Recvclmsg*label.width:          200
+Recvclmsg*label.height:         50

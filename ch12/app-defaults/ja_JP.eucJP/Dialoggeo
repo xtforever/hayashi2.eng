@@ -1,0 +1,18 @@
+*fontList:                             *-14-*:
+
+Dialoggeo.title:                       ダイアログの位置とサイズ
+Dialoggeo*dialog.dialogTitle:          ダイアログ
+
+Dialoggeo*dialog.defaultPosition:      False
+Dialoggeo*dialog.x:                    100
+Dialoggeo*dialog.y:                    600
+
+Dialoggeo*dialog.noResize:             True
+
+Dialoggeo*button.labelString:          ダイアログを 100x600 に表示
+Dialoggeo*button.marginWidth:          50
+Dialoggeo*button.marginHeight:         30
+Dialoggeo*dialog.messageString:        メッセージ
+Dialoggeo*dialog.okLabelString:        了解
+Dialoggeo*dialog.cancelLabelString:    取消
+Dialoggeo*dialog.helpLabelString:      ヘルプ

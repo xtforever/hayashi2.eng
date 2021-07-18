@@ -1,0 +1,12 @@
+*fontList:                               *-14-*:
+
+Closeignore.title:                       Close ボタンを無視
+Closeignore*dialog.dialogTitle:          ダイアログ
+
+Closeignore*button.labelString:          ボタン
+Closeignore*button.marginWidth:          50
+Closeignore*button.marginHeight:         30
+Closeignore*dialog.messageString:        メッセージ
+Closeignore*dialog.okLabelString:        了解
+Closeignore*dialog.cancelLabelString:    取消
+Closeignore*dialog.helpLabelString:      ヘルプ

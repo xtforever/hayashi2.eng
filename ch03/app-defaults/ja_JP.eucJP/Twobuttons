@@ -1,0 +1,8 @@
+*fontList:                    *-14-*:
+Twobuttons*panel.size:        400
+Twobuttons*button1.size:      100
+Twobuttons*button1.offset:    100
+Twobuttons*button1.label:     ボタン１
+Twobuttons*button2.size:      150
+Twobuttons*button2.offset:    200
+Twobuttons*button2.label:     ボタン２

@@ -1,0 +1,7 @@
+*fontList:                      *-14-*:
+
+Mwmmenu.title:                  Mwm メニューの追加
+
+Mwmmenu*button.labelString:     ボタン
+Mwmmenu*button.width:           300
+Mwmmenu*button.height:          200

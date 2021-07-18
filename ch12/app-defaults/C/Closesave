@@ -1,0 +1,25 @@
+*fontList:                           *-14-*:
+Closesave.title:                     Prepare for Close button
+
+! Locate "File Name" area and [Open] button at the top
+Closesave*field.topAttachment:       ATTACH_FORM
+Closesave*field.leftAttachment:      ATTACH_FORM
+Closesave*field.rightAttachment:     ATTACH_FORM
+
+! Locate text wdiget at the center
+Closesave*textSW.topAttachment:      ATTACH_WIDGET
+Closesave*textSW.leftAttachment:     ATTACH_FORM
+Closesave*textSW.rightAttachment:    ATTACH_FORM
+Closesave*textSW.bottomAttachment:   ATTACH_FORM
+
+! List "File Name:", input area, [Open] and [Save] button horizontally
+Closesave*field.orientation:         HORIZONTAL
+Closesave*label.labelString:         File Name:
+Closesave*fname.columns:             10
+Closesave*open.labelString:          Open
+Closesave*save.labelString:          Save
+
+! Multiline text widget
+Closesave*text.editMode:             MULTI_LINE_EDIT
+Closesave*text.rows:                 10
+Closesave*text.columns:              24

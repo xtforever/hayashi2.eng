@@ -1,0 +1,7 @@
+Simplebtn.title:                  Simple Button Example
+Simplebtn*fontList:               *-14-*:
+Simplebtn*panel.marginWidth:      20
+Simplebtn*panel.marginHeight:     10
+Simplebtn*button.labelString:     Button
+
+simplebtn*button.background:      green

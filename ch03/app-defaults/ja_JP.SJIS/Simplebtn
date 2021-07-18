@@ -1,0 +1,7 @@
+*fontList:                        *-14-*:
+Simplebtn.title:                  ボタンの簡単な例
+Simplebtn*panel.marginWidth:      20
+Simplebtn*panel.marginHeight:     10
+Simplebtn*button.labelString:     ボタン
+
+simplebtn*button.background:      green

@@ -1,0 +1,9 @@
+*fontList:                              *-14-*:
+Csmultiline.title:                      複数行メッセージ
+
+Csmultiline*button.labelString:         メッセージを表示
+
+Csmultiline*dialog.dialogTitle:         メッセージ
+Csmultiline*dialog.okLabelString:       了解
+Csmultiline*dialog.cancelLabelString:   取消
+Csmultiline*dialog.helpLabelString:     ヘルプ

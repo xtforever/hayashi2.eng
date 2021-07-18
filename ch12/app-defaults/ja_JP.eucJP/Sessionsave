@@ -1,0 +1,25 @@
+*fontList:                             *-14-*:
+Sessionsave.title:                     セッションの保存
+
+! ファイル名入力領域と [オープン], [保存] ボタンを最上部に置く
+Sessionsave*field.topAttachment:       ATTACH_FORM
+Sessionsave*field.leftAttachment:      ATTACH_FORM
+Sessionsave*field.rightAttachment:     ATTACH_FORM
+
+! テキスト・ウィジェットを中央に置く
+Sessionsave*textSW.topAttachment:      ATTACH_WIDGET
+Sessionsave*textSW.leftAttachment:     ATTACH_FORM
+Sessionsave*textSW.rightAttachment:    ATTACH_FORM
+Sessionsave*textSW.bottomAttachment:   ATTACH_FORM
+
+! "ファイル名:"，入力領域，[オープン]，[保存] を横に並べる
+Sessionsave*field.orientation:         HORIZONTAL
+Sessionsave*label.labelString:         ファイル名:
+Sessionsave*fname.columns:             10
+Sessionsave*open.labelString:          オープン
+Sessionsave*save.labelString:          保存
+
+! テキスト・ウィジェットは複数行
+Sessionsave*text.editMode:             MULTI_LINE_EDIT
+Sessionsave*text.rows:                 10
+Sessionsave*text.columns:              24

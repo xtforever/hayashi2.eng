@@ -1,0 +1,5 @@
+*fontList:                       *-14-*:
+Wmstate.title:                   Window State
+
+Wmstate*withdraw.labelString:    Withdrawn -> Iconic -> Normal
+Wmstate*iconify.labelString:     Iconic -> Withdrawn -> Normal

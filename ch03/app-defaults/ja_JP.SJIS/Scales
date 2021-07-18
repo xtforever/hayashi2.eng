@@ -1,0 +1,9 @@
+*fontList:                     *-14-*:
+Scales*panel.spacing:          20
+Scales*XmScale.orientation:    HORIZONTAL
+Scales*scale1.minimum:         0
+Scales*scale1.maximum:         100
+Scales*scale1.numLabels:       11
+Scales*scale2.minimum:        -10
+Scales*scale2.maximum:         10
+Scales*scale2.numLabels:       5

@@ -1,0 +1,41 @@
+*fontList:                          *-fixed-*-14-*-c-*:
+Possize.title:                      位置とサイズ
+
+! テキスト・ウィジェットのリソース
+Possize*text.editMode:              MULTI_LINE_EDIT
+Possize*text.rows:                  24
+Possize*text.marginWidth:           4
+Possize*text.marginHeight:          4
+Possize*text.highlightThickness:    2
+Possize*text.shadowThickness:       2
+Possize*text.borderWidth:           0
+
+! 初期の位置
+Possize.geometry:                   +300+100
+!Possize.x:                          300
+!Possize.y:                          100
+
+! ベース・サイズ = (margin + highlight + shadow) * 2 = (4 + 2 + 2) * 2 = 16
+Possize.baseWidth:                  16
+Possize.baseHeight:                 16
+
+! フォントのサイズごとに増分
+Possize.widthInc:                   14
+Possize.heightInc:                  14
+
+! 初期サイズ = 20カラム x 8行
+!      幅  = カラム数 * 文字サイズ + ベース・サイズ = 20 * 14 + 16 = 296
+!     高さ =   行数   * 文字サイズ + ベース・サイズ =  8 * 14 + 16 = 128
+Possize.width:                      296
+Possize.height:                     128
+
+! 最小サイズ = 10カラム x 4行
+!      幅  = カラム数 * 文字サイズ + ベース・サイズ = 10 * 14 + 16 = 156
+!     高さ =   行数   * 文字サイズ + ベース・サイズ =  4 * 14 + 16 =  72
+Possize.minWidth:                   156
+Possize.minHeight:                  72
+! 最大サイズ = 40カラム x 24行
+!      幅  = カラム数 * 文字サイズ + ベース・サイズ = 40 * 14 + 16 = 576
+!     高さ =   行数   * 文字サイズ + ベース・サイズ = 24 * 14 + 16 = 352
+Possize.maxWidth:                   576
+Possize.maxHeight:                  352

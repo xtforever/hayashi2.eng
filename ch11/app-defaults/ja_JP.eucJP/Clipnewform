@@ -1,0 +1,6 @@
+*fontList:                         *-14-*:
+Clipnewform.title:                 クリップボード: 新フォーマット
+Clipnewform*clock.labelString:     \  
+Clipnewform*control.orientation:   HORIZONTAL
+Clipnewform*copy.labelString:      コピー
+Clipnewform*paste.labelString:     ペースト

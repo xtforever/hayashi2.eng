@@ -1,0 +1,9 @@
+Csdrawuline.title:                      Function: XmStringDrawUnderline()
+Csdrawuline*textFontList:               *-24-*:
+
+Csdrawuline*canvas.topAttachment:       ATTACH_FORM
+Csdrawuline*canvas.bottomAttachment:    ATTACH_FORM
+Csdrawuline*canvas.leftAttachment:      ATTACH_FORM
+Csdrawuline*canvas.rightAttachment:     ATTACH_FORM
+Csdrawuline*canvas.width:               300
+Csdrawuline*canvas.height:              100

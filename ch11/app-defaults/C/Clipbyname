@@ -1,0 +1,34 @@
+*fontList:                            *-14-*:
+Clipbyname.title:                     Clipboard: CopyByName
+
+! Locate "File Name" area and [Open] button at the top
+Clipbyname*field.topAttachment:       ATTACH_FORM
+Clipbyname*field.leftAttachment:      ATTACH_FORM
+Clipbyname*field.rightAttachment:     ATTACH_FORM
+
+! Locate text wdiget at the center
+Clipbyname*textSW.topAttachment:      ATTACH_WIDGET
+Clipbyname*textSW.leftAttachment:     ATTACH_FORM
+Clipbyname*textSW.rightAttachment:    ATTACH_FORM
+Clipbyname*textSW.bottomAttachment:   ATTACH_WIDGET
+
+! Locate [Copy] and [Paste] button at the bottom
+Clipbyname*control.leftAttachment:    ATTACH_FORM
+Clipbyname*control.rightAttachment:   ATTACH_FORM
+Clipbyname*control.bottomAttachment:  ATTACH_FORM
+
+! List "File Name:", input area, and [Open] button horizontally
+Clipbyname*field.orientation:         HORIZONTAL
+Clipbyname*label.labelString:         File Name:
+Clipbyname*fname.columns:             10
+Clipbyname*open.labelString:          Open
+
+! Multiline text widget
+Clipbyname*text.editMode:             MULTI_LINE_EDIT
+Clipbyname*text.rows:                 10
+Clipbyname*text.columns:              24
+
+! List [Copy] and [Paste] buttons horizontally
+Clipbyname*control.orientation:       HORIZONTAL
+Clipbyname*copy.labelString:          Copy
+Clipbyname*paste.labelString:         Paste

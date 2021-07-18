@@ -1,0 +1,9 @@
+Csdraw.title:                      ´Ø¿ô: XmStringDraw()
+Csdraw*textFontList:               *-24-*:
+
+Csdraw*canvas.topAttachment:       ATTACH_FORM
+Csdraw*canvas.bottomAttachment:    ATTACH_FORM
+Csdraw*canvas.leftAttachment:      ATTACH_FORM
+Csdraw*canvas.rightAttachment:     ATTACH_FORM
+Csdraw*canvas.width:               200
+Csdraw*canvas.height:              100

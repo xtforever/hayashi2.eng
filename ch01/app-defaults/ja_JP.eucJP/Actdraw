@@ -1,0 +1,19 @@
+Actdraw*canvas.topAttachment:       ATTACH_FORM
+Actdraw*canvas.bottomAttachment:    ATTACH_FORM
+Actdraw*canvas.leftAttachment:      ATTACH_FORM
+Actdraw*canvas.rightAttachment:     ATTACH_FORM
+Actdraw*canvas.width:               200
+Actdraw*canvas.height:              200
+
+! 左ボタンだけで操作
+Actdraw*canvas.translations:        #replace  <Btn1Down>   : move-arc() \n\
+                                              <Btn1Motion> : move-arc()
+
+! 中ボタンだけで操作
+!Actdraw*canvas.translations:        #replace  <Btn2Down>   : move-arc() \n\
+!                                              <Btn2Motion> : move-arc()
+
+! どのボタンで操作してもよい
+!Actdraw*canvas.translations:        #replace  <BtnDown>   : move-arc() \n\
+!                                              <BtnMotion> : move-arc()
+

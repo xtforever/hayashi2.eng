@@ -1,0 +1,6 @@
+*fontList:                         *-14-*:
+Selectparam.title:                 セレクション・パラメータ
+Selectparam*text.columns:          10
+Selectparam*copy.labelString:      コピー
+Selectparam*paste0.labelString:    絶対パス
+Selectparam*paste1.labelString:    ファイル名

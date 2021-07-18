@@ -1,0 +1,15 @@
+*fontList:                             *-14-*:
+
+Dialoggeo.title:                       Dialog position and size
+Dialoggeo*dialog.dialogTitle:          Dialog
+
+Dialoggeo*dialog.defaultPosition:      False
+Dialoggeo*dialog.x:                    100
+Dialoggeo*dialog.y:                    600
+
+Dialoggeo*dialog.noResize:             True
+
+Dialoggeo*button.labelString:          Show dialog at 100x600
+Dialoggeo*button.marginWidth:          50
+Dialoggeo*button.marginHeight:         30
+Dialoggeo*dialog.messageString:        Message

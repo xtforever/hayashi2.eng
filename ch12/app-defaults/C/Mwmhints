@@ -1,0 +1,9 @@
+*fontList:                            *-14-*:
+
+Mwmhints.title:                       Mwm function and menu
+Mwmhints*dialog.dialogTitle:          Dialog
+
+Mwmhints*button.labelString:          Button
+Mwmhints*button.marginWidth:          100
+Mwmhints*button.marginHeight:         50
+Mwmhints*dialog.messageString:        Message

@@ -1,0 +1,9 @@
+*fontList:                *-14-*:
+XImtext.title:            Japanese Input Sample
+XImtext*text.editMode:    MULTI_LINE_EDIT
+XImtext*text.rows:        4
+
+!XImtext.inputMethod:      
+!XImtext.preeditType:      OverTheSpot
+!XImtext.preeditType:      OffTheSpot
+!XImtext.preeditType:      Root

@@ -1,0 +1,34 @@
+*fontList:                            *-14-*:
+Selectincr.title:                     インクリメンタル転送
+
+! ファイル名入力領域と [オープン] ボタンを最上部に置く
+Selectincr*field.topAttachment:       ATTACH_FORM
+Selectincr*field.leftAttachment:      ATTACH_FORM
+Selectincr*field.rightAttachment:     ATTACH_FORM
+
+! テキスト・ウィジェットを中央に置く
+Selectincr*textSW.topAttachment:      ATTACH_WIDGET
+Selectincr*textSW.leftAttachment:     ATTACH_FORM
+Selectincr*textSW.rightAttachment:    ATTACH_FORM
+Selectincr*textSW.bottomAttachment:   ATTACH_WIDGET
+
+! [コピー] と [ペースト] ボタンは最下部に置く
+Selectincr*control.leftAttachment:    ATTACH_FORM
+Selectincr*control.rightAttachment:   ATTACH_FORM
+Selectincr*control.bottomAttachment:  ATTACH_FORM
+
+! "ファイル名:"，入力領域，[オープン] を横に並べる
+Selectincr*field.orientation:         HORIZONTAL
+Selectincr*label.labelString:         ファイル名:
+Selectincr*fname.columns:             10
+Selectincr*open.labelString:          オープン
+
+! テキスト・ウィジェットは複数行
+Selectincr*text.editMode:             MULTI_LINE_EDIT
+Selectincr*text.rows:                 10
+Selectincr*text.columns:              24
+
+! [コピー] と [ペースト] ボタンを横に並べる
+Selectincr*control.orientation:       HORIZONTAL
+Selectincr*copy.labelString:          コピー
+Selectincr*paste.labelString:         ペースト

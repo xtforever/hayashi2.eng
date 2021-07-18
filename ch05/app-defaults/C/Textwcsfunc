@@ -1,0 +1,7 @@
+*fontList:                              *-14-*:
+Textwcsfunc.title:                      Input numbers
+
+Textwcsfunc*button.labelString:         Confirm
+
+Textwcsfunc*error.dialogTitle:          Error
+Textwcsfunc*error.messageString:        Input only numbers.

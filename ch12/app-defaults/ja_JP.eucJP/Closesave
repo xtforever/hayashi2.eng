@@ -1,0 +1,25 @@
+*fontList:                           *-14-*:
+Closesave.title:                     Close ボタンに備える
+
+! ファイル名入力領域と [オープン], [保存] ボタンを最上部に置く
+Closesave*field.topAttachment:       ATTACH_FORM
+Closesave*field.leftAttachment:      ATTACH_FORM
+Closesave*field.rightAttachment:     ATTACH_FORM
+
+! テキスト・ウィジェットを中央に置く
+Closesave*textSW.topAttachment:      ATTACH_WIDGET
+Closesave*textSW.leftAttachment:     ATTACH_FORM
+Closesave*textSW.rightAttachment:    ATTACH_FORM
+Closesave*textSW.bottomAttachment:   ATTACH_FORM
+
+! "ファイル名:"，入力領域，[オープン]，[保存] を横に並べる
+Closesave*field.orientation:         HORIZONTAL
+Closesave*label.labelString:         ファイル名:
+Closesave*fname.columns:             10
+Closesave*open.labelString:          オープン
+Closesave*save.labelString:          保存
+
+! テキスト・ウィジェットは複数行
+Closesave*text.editMode:             MULTI_LINE_EDIT
+Closesave*text.rows:                 10
+Closesave*text.columns:              24

@@ -1,0 +1,113 @@
+*fontList:                                   *-gothic-medium-r-normal--16-*:
+Menulabels.title:                            メニュー・ラベル
+
+Menulabels*menubar.button_0.labelString:     ファイル(F)
+Menulabels*menubar.button_0.mnemonic:                 F
+Menulabels*filemenu.button_0.labelString:      新規(N)
+Menulabels*filemenu.button_0.mnemonic:              N
+Menulabels*filemenu.button_1.labelString:      オープン(O)...
+Menulabels*filemenu.button_1.mnemonic:                  O
+Menulabels*filemenu.button_2.labelString:      保管(S)
+Menulabels*filemenu.button_2.mnemonic:              S
+Menulabels*filemenu.button_3.labelString:      別名保管(A)...
+Menulabels*filemenu.button_3.mnemonic:                  A
+Menulabels*filemenu.button_4.labelString:      印刷(P)
+Menulabels*filemenu.button_4.mnemonic:              P
+Menulabels*filemenu.button_5.labelString:      クローズ(C)
+Menulabels*filemenu.button_5.mnemonic:                  C
+Menulabels*filemenu.button_6.labelString:      終了(x)
+Menulabels*filemenu.button_6.mnemonic:              x
+
+
+Menulabels*menubar.button_1.labelString:     編集(E)
+Menulabels*menubar.button_1.mnemonic:             E
+Menulabels*editmenu.button_0.labelString:      取消(U)
+Menulabels*editmenu.button_0.mnemonic:              U
+Menulabels*editmenu.button_0.accelerator:                Meta<Key>backspace
+Menulabels*editmenu.button_0.acceleratorText:            Alt+Backspace
+Menulabels*editmenu.button_1.labelString:      切抜き(t)
+Menulabels*editmenu.button_1.mnemonic:                t
+Menulabels*editmenu.button_1.accelerator:                Shift<Key>Del
+Menulabels*editmenu.button_1.acceleratorText:            Shift+Del
+Menulabels*editmenu.button_2.labelString:      複写(C)
+Menulabels*editmenu.button_2.mnemonic:              C
+Menulabels*editmenu.button_2.accelerator:                Ctrl<Key>Ins
+Menulabels*editmenu.button_2.acceleratorText:            Ctrl+Ins
+Menulabels*editmenu.button_3.labelString:      連結複写(k)
+Menulabels*editmenu.button_3.mnemonic:                  k
+Menulabels*editmenu.button_4.labelString:      貼付け(P)
+Menulabels*editmenu.button_4.mnemonic:                P
+Menulabels*editmenu.button_4.accelerator:                Shift<Key>Ins
+Menulabels*editmenu.button_4.acceleratorText:            Shift+Ins
+Menulabels*editmenu.button_5.labelString:      連結貼付け(L)
+Menulabels*editmenu.button_5.mnemonic:                    L
+Menulabels*editmenu.button_6.labelString:      消去(e)
+Menulabels*editmenu.button_6.mnemonic:              e
+Menulabels*editmenu.button_7.labelString:      削除(D)
+Menulabels*editmenu.button_7.mnemonic:              D
+Menulabels*editmenu.button_8.labelString:      全選択
+Menulabels*editmenu.button_8.accelerator:                Ctrl<Key>slash
+Menulabels*editmenu.button_8.acceleratorText:            Ctrl+/
+Menulabels*editmenu.button_9.labelString:      全選択解除
+Menulabels*editmenu.button_9.accelerator:                Ctrl<Key>backslash
+Menulabels*editmenu.button_9.acceleratorText:            Ctrl+\\
+Menulabels*editmenu.button_10.labelString:      貼付け選択
+Menulabels*editmenu.button_11.labelString:      再選択
+Menulabels*editmenu.button_11.accelerator:                Meta<Key>Ins
+Menulabels*editmenu.button_11.acceleratorText:            Alt+Ins
+Menulabels*editmenu.button_12.labelString:      プロモート
+Menulabels*editmenu.button_12.accelerator:                Meta<Key>Ins
+Menulabels*editmenu.button_12.acceleratorText:            Alt+Ins
+
+
+Menulabels*menubar.button_2.labelString:     ヘルプ(H)
+Menulabels*menubar.button_2.mnemonic:               H
+Menulabels*secondhelp.button_0.labelString:      状況依存ヘルプ(C)
+Menulabels*secondhelp.button_0.mnemonic:                        C
+Menulabels*secondhelp.button_0.accelerator:                Shift<Key>F1
+Menulabels*secondhelp.button_0.acceleratorText:            Shift+Help
+Menulabels*secondhelp.button_1.labelString:      概要(O)
+Menulabels*secondhelp.button_1.mnemonic:              O
+Menulabels*secondhelp.button_2.labelString:      索引(I)
+Menulabels*secondhelp.button_2.mnemonic:              I
+Menulabels*secondhelp.button_3.labelString:      キーボード(K)
+Menulabels*secondhelp.button_3.mnemonic:                    K
+Menulabels*secondhelp.button_4.labelString:      学習(T)
+Menulabels*secondhelp.button_4.mnemonic:              T
+Menulabels*secondhelp.button_5.labelString:      ヘルプの使用(H)
+Menulabels*secondhelp.button_5.mnemonic:                      H
+Menulabels*secondhelp.button_6.labelString:      製品情報(P)
+Menulabels*secondhelp.button_6.mnemonic:                  P
+
+
+Menulabels*menubar.helpbutton.labelString:   ヘルプ(H)
+Menulabels*menubar.helpbutton.mnemonic:             H
+Menulabels*helpmenu.button_0.labelString:      コンテキスト(C)
+Menulabels*helpmenu.button_0.mnemonic:                      C
+Menulabels*helpmenu.button_0.accelerator:                     Shift<Key>F1
+Menulabels*helpmenu.button_0.acceleratorText:                 Shift+Help
+Menulabels*helpmenu.button_1.labelString:      ヘルプ(H)
+Menulabels*helpmenu.button_1.mnemonic:                H
+Menulabels*helpmenu.button_2.labelString:      ウィンドウ(W)
+Menulabels*helpmenu.button_2.mnemonic:                    W
+Menulabels*helpmenu.button_3.labelString:      キー(K)
+Menulabels*helpmenu.button_3.mnemonic:              K
+Menulabels*helpmenu.button_4.labelString:      索引(I)
+Menulabels*helpmenu.button_4.mnemonic:              I
+Menulabels*helpmenu.button_5.labelString:      学習(T)
+Menulabels*helpmenu.button_5.mnemonic:              T
+Menulabels*helpmenu.button_6.labelString:      バージョン(V)
+Menulabels*helpmenu.button_6.mnemonic:                    V
+
+Menulabels*mainwin.scrollBarDisplayPolicy:    STATIC
+Menulabels*mainwin.scrollingPolicy:           AUTOMATIC
+
+Menulabels*text.editMode:        MULTI_LINE_EDIT
+Menulabels*text.columns:         40
+Menulabels*text.rows:            20
+
+Menulabels*command.orientation:  HORIZONTAL
+Menulabels*copy.labelString:     コピー
+Menulabels*cut.labelString:      カット
+Menulabels*paste.labelString:    ペースト
+

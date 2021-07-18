@@ -1,0 +1,11 @@
+*fontList:                          *-14-*:
+Changecolor*sample.labelString:     \ 
+Changecolor*sample.marginHeight:    40
+Changecolor*sample.marginWidth:     100
+Changecolor*XmScale.orientation:    HORIZONTAL
+Changecolor*XmScale.showValue:      True
+Changecolor*XmScale.minimum:        0
+Changecolor*XmScale.maximum:        255
+Changecolor*scale0.titleString:     ê‘
+Changecolor*scale1.titleString:     óŒ
+Changecolor*scale2.titleString:     ê¬

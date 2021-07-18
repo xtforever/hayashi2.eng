@@ -1,0 +1,15 @@
+!*fontList:                            *-14-*:
+
+Promptdialog.title:                       アプリケーション名
+Promptdialog.iconName:                    ｱｲｺﾝ名
+
+Promptdialog*button.labelString:          ボタン
+Promptdialog*button.marginWidth:          100
+
+Promptdialog*dialog.dialogTitle:          プロンプト・ダイアログ
+Promptdialog*dialog.selectionLabelString: ファイル名を入力してください
+Promptdialog*dialog.okLabelString:        了解
+Promptdialog*apply.labelString:           適用
+Promptdialog*reset.labelString:           リセット
+Promptdialog*dialog.cancelLabelString:    取消
+Promptdialog*dialog.helpLabelString:      ヘルプ

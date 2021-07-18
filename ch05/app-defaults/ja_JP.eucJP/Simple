@@ -1,0 +1,6 @@
+Simple.title:                  Motifの簡単な例
+Simple*control.orientation:    HORIZONTAL
+Simple*fontList:               *-medium-r-normal--16-*-c-*:
+Simple*label.labelString:      ファイル名
+Simple*button.labelString:     オープン
+Simple*text.columns:           10

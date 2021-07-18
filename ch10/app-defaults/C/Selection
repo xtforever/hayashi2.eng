@@ -1,0 +1,7 @@
+*fontList:                       *-14-*:
+Selection.title:                 Selection
+Selection*text.editMode:         MULTI_LINE_EDIT
+Selection*text.rows:             5
+Selection*text.columns:          10
+Selection*select.labelString:    Select Text
+Selection*paste.labelString:     Paste

@@ -1,0 +1,7 @@
+Animation*canvas.topAttachment:       ATTACH_FORM
+Animation*canvas.bottomAttachment:    ATTACH_FORM
+Animation*canvas.leftAttachment:      ATTACH_FORM
+Animation*canvas.rightAttachment:     ATTACH_FORM
+Animation*canvas.width:               400
+Animation*canvas.height:              200
+Animation*canvas.background:          white

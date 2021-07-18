@@ -1,0 +1,29 @@
+Switchmsg.title:                            メッセージの切り替え
+Switchmsg*fontList:                         *-14-*:
+
+Switchmsg*menubar.button_0.labelString:     ファイル(F)
+Switchmsg*menubar.button_0.mnemonic:                 F
+Switchmsg*filemenu.button_0.labelString:      新規(N)
+Switchmsg*filemenu.button_0.mnemonic:              N
+Switchmsg*filemenu.button_1.labelString:      オープン(O)...
+Switchmsg*filemenu.button_1.mnemonic:                  O
+Switchmsg*filemenu.button_1.accelerator:                  Ctrl<Key>o
+Switchmsg*filemenu.button_1.acceleratorText:              Ctrl+O
+Switchmsg*filemenu.button_2.labelString:      保管(S)
+Switchmsg*filemenu.button_2.mnemonic:              S
+Switchmsg*filemenu.button_3.labelString:      終了(X)
+Switchmsg*filemenu.button_3.mnemonic:              X
+Switchmsg*filemenu.button_3.accelerator:                  Alt<Key>F4
+Switchmsg*filemenu.button_3.acceleratorText:              Alt+F4
+
+Switchmsg*mainwin.scrollBarDisplayPolicy:    STATIC
+Switchmsg*mainwin.scrollingPolicy:           AUTOMATIC
+
+Switchmsg*work.text.editMode:                MULTI_LINE_EDIT
+Switchmsg*work.text.columns:                 40
+Switchmsg*work.text.rows:                    200
+
+Switchmsg*question.dialogTitle:              確認
+Switchmsg*question.okLabelString:            了解
+Switchmsg*question.cancelLabelString:        取消
+Switchmsg*question.helpLabelString:          ヘルプ

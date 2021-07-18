@@ -1,0 +1,12 @@
+*fontList:                              *-14-*:
+
+Dialogpos.title:                        Dialog positioning
+
+Dialogpos*button1.labelString:          Button 1
+Dialogpos*button2.labelString:          Button 2
+Dialogpos*button3.labelString:          Button 3
+Dialogpos*XmPushButton.marginWidth:     60
+Dialogpos*XmPushButton.marginHeight:    30
+
+Dialogpos*dialog.dialogTitle:           Dialog
+Dialogpos*dialog.messageString:         Message

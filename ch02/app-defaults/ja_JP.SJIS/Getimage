@@ -1,0 +1,16 @@
+*fontList:                           timB18
+
+Getimage*canvas.width:               200
+Getimage*canvas.height:              200
+Getimage*canvas.topAttachment:       ATTACH_FORM
+Getimage*canvas.leftAttachment:      ATTACH_FORM
+Getimage*canvas.rightAttachment:     ATTACH_FORM
+Getimage*canvas.bottomAttachment:    ATTACH_POSITION
+Getimage*canvas.bottomPosition:      80
+
+Getimage*label.topAttachment:        ATTACH_POSITION
+Getimage*label.topPosition:          80
+Getimage*label.leftAttachment:       ATTACH_FORM
+Getimage*label.rightAttachment:      ATTACH_FORM
+Getimage*label.bottomAttachment:     ATTACH_FORM
+Getimage*label.labelString:          RGB:             

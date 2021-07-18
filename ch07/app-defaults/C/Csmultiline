@@ -1,0 +1,6 @@
+*fontList:                              *-14-*:
+Csmultiline.title:                      Multiline Message
+
+Csmultiline*button.labelString:         Show Message
+
+Csmultiline*dialog.dialogTitle:         Message

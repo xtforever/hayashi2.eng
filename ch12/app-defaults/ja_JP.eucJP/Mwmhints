@@ -1,0 +1,12 @@
+*fontList:                            *-14-*:
+
+Mwmhints.title:                       Mwm の機能とメニュー
+Mwmhints*dialog.dialogTitle:          ダイアログ
+
+Mwmhints*button.labelString:          ボタン
+Mwmhints*button.marginWidth:          100
+Mwmhints*button.marginHeight:         50
+Mwmhints*dialog.messageString:        メッセージ
+Mwmhints*dialog.okLabelString:        了解
+Mwmhints*dialog.cancelLabelString:    取消
+Mwmhints*dialog.helpLabelString:      ヘルプ

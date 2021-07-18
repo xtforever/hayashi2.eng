@@ -1,0 +1,18 @@
+*fontList:                            *-14-*:
+
+Bitmapcnv*label.labelPixmap:          flagdown
+Bitmapcnv*label.height:               100
+Bitmapcnv*label.topAttachment:        ATTACH_FORM
+Bitmapcnv*label.leftAttachment:       ATTACH_FORM
+Bitmapcnv*label.rightAttachment:      ATTACH_FORM
+Bitmapcnv*label.bottomAttachment:     ATTACH_WIDGET
+
+Bitmapcnv*text.columns:               10
+Bitmapcnv*text.leftAttachment:        ATTACH_FORM
+Bitmapcnv*text.rightAttachment:       ATTACH_FORM
+Bitmapcnv*text.bottomAttachment:      ATTACH_WIDGET
+
+Bitmapcnv*button.labelString:         Convert
+Bitmapcnv*button.leftAttachment:      ATTACH_FORM
+Bitmapcnv*button.rightAttachment:     ATTACH_FORM
+Bitmapcnv*button.bottomAttachment:    ATTACH_FORM

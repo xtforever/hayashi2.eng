@@ -1,0 +1,41 @@
+*fontList:                          *-fixed-*-14-*-c-*:
+Possize.title:                      Position and Size
+
+! Text widget resources
+Possize*text.editMode:              MULTI_LINE_EDIT
+Possize*text.rows:                  24
+Possize*text.marginWidth:           4
+Possize*text.marginHeight:          4
+Possize*text.highlightThickness:    2
+Possize*text.shadowThickness:       2
+Possize*text.borderWidth:           0
+
+! Initial position
+Possize.geometry:                   +300+100
+!Possize.x:                          300
+!Possize.y:                          100
+
+! base size = (margin + highlight + shadow) * 2 = (4 + 2 + 2) * 2 = 16
+Possize.baseWidth:                  16
+Possize.baseHeight:                 16
+
+! increment by font size
+Possize.widthInc:                   14
+Possize.heightInc:                  14
+
+! Initial size = 20columns x 8lines
+!     width  = columns * char size + base size = 20 * 14 + 16 = 296
+!     height =  lines  * char size + base size =  8 * 14 + 16 = 128
+Possize.width:                      296
+Possize.height:                     128
+
+! Minimum size = 10columns x 4lines
+!     width  = columns * char size + base size = 10 * 14 + 16 = 156
+!     height =  lines  * char size + base size =  4 * 14 + 16 =  72
+Possize.minWidth:                   156
+Possize.minHeight:                  72
+! Maximum size = 40columns x 24lines
+!     width  = columns * char size + base size = 40 * 14 + 16 = 576
+!     height =  lines  * char size + base size = 24 * 14 + 16 = 352
+Possize.maxWidth:                   576
+Possize.maxHeight:                  352

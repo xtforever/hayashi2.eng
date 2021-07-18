@@ -1,0 +1,14 @@
+*fontList:                       *-14-*:
+Clip2type.title:                 Clipboard: Multiple format
+
+Clip2type*box.isAligned:         False
+Clip2type*box*spacing:           0
+Clip2type*figure.labelType:      PIXMAP
+Clip2type*figure.alignment:      ALIGNMENT_CENTER
+Clip2type*figure.marginTop:      4
+Clip2type*title.labelString:     \  
+Clip2type*title.alignment:       ALIGNMENT_CENTER
+Clip2type*title.marginBottom:    4
+
+Clip2type*copy.labelString:      Copy
+Clip2type*paste.labelString:     Paste

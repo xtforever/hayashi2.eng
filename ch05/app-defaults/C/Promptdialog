@@ -1,0 +1,12 @@
+*fontList:                                  *-14-*:
+
+Promptdialog.title:                       Application
+Promptdialog.iconName:                    Icon
+
+Promptdialog*button.labelString:          Button
+Promptdialog*button.marginWidth:          100
+
+Promptdialog*dialog.dialogTitle:          Prompt Dialog
+Promptdialog*dialog.selectionLabelString: Enter file name
+Promptdialog*apply.labelString:           Apply
+Promptdialog*reset.labelString:           Reset

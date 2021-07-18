@@ -1,0 +1,9 @@
+*fontList:                            *-14-*:
+Inputdata.title:                      Input Callback
+Inputdata*scale.orientation:          HORIZONTAL
+Inputdata*scale.processingDirection:  MAX_ON_RIGHT
+Inputdata*scale.maximum:              100
+Inputdata*scale.minimum:              0
+Inputdata*scale.value:                0
+Inputdata*scale.showValue:            True
+Inputdata*scale.titleString:          Inputted Value

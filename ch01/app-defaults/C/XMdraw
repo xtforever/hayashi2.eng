@@ -1,0 +1,6 @@
+XMdraw*canvas.topAttachment:       ATTACH_FORM
+XMdraw*canvas.bottomAttachment:    ATTACH_FORM
+XMdraw*canvas.leftAttachment:      ATTACH_FORM
+XMdraw*canvas.rightAttachment:     ATTACH_FORM
+XMdraw*canvas.width:               200
+XMdraw*canvas.height:              200

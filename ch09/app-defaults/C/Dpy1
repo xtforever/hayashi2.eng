@@ -1,0 +1,4 @@
+*fontList:                   *-14-*:
+Dpy1.title:                  Display 1
+Dpy1.iconName:               Dpy1
+Dpy1*button1.labelString:    Button 1

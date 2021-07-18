@@ -1,0 +1,13 @@
+*fontList:                              *-14-*:
+
+Onlydialog*dialog.dialogTitle:          ダイアログだけを表示
+Onlydialog.mappedWhenManaged:           False
+
+Onlydialog*dialog.defaultPosition:      False
+Onlydialog*dialog.x:                    500
+Onlydialog*dialog.y:                    400
+
+Onlydialog*dialog.messageString:        メッセージ
+Onlydialog*dialog.okLabelString:        了解
+Onlydialog*dialog.cancelLabelString:    取消
+Onlydialog*dialog.helpLabelString:      ヘルプ

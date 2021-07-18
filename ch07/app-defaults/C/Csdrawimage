@@ -1,0 +1,12 @@
+Csdrawimage.title:                      Function: XmStringDrawImage()
+Csdrawimage*textFontList:               *-24-*:
+
+Csdrawimage*canvas.foreground:          navy
+Csdrawimage*canvas.background:          pink
+
+Csdrawimage*canvas.topAttachment:       ATTACH_FORM
+Csdrawimage*canvas.bottomAttachment:    ATTACH_FORM
+Csdrawimage*canvas.leftAttachment:      ATTACH_FORM
+Csdrawimage*canvas.rightAttachment:     ATTACH_FORM
+Csdrawimage*canvas.width:               250
+Csdrawimage*canvas.height:              100

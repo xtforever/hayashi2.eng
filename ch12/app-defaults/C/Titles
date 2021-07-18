@@ -1,0 +1,5 @@
+*fontList:                          *-14-*:
+
+Titles*button.labelString:          Button
+Titles*button.marginWidth:          100
+Titles*dialog.messageString:        Message

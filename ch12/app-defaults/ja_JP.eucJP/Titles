@@ -1,0 +1,8 @@
+*fontList:                          *-14-*:
+
+Titles*button.labelString:          ボタン
+Titles*button.marginWidth:          100
+Titles*dialog.messageString:        メッセージ
+Titles*dialog.okLabelString:        了解
+Titles*dialog.cancelLabelString:    取消
+Titles*dialog.helpLabelString:      ヘルプ
