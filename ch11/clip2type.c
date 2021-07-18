@@ -17,9 +17,8 @@ static void PasteCB();
 static Widget box, figure, title;
 static Pixmap pixmap;
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, copy, paste;
@@ -38,8 +37,7 @@ main(argc, argv)
     /* (1) Box which contains figure and Label */
     ac = 0;
     box = XmCreateRowColumn(panel, "box", al, ac);
-    XtManageChild(box);
-    /* Figure */
+    XtManageChild(box);    /* Figure */
     ac = 0;
     figure = XmCreateLabel(box, "figure", al, ac);
     XtManageChild(figure);
@@ -65,10 +63,8 @@ main(argc, argv)
 }
 
 /* (4) [Copy] button callback */
-static void CopyCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+CopyCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     XmString label;
     long item_id;
@@ -106,7 +102,8 @@ static void CopyCB(w, client_data, call_data)
     if (XmClipboardCopy(XtDisplay(box), XtWindow(box), item_id,
                         "PIXMAP", &pixmap, sizeof(pixmap), private_id,
                         &data_id) != ClipboardSuccess) {
-        XmClipboardCancelCopy(XtDisplay(text), XtWindow(text), item_id);
+//        XmClipboardCancelCopy(XtDisplay(text), XtWindow(text), item_id);
+        XmClipboardCancelCopy(XtDisplay(box), XtWindow(box), item_id);
         XBell(XtDisplay(w), 0);
         XmStringFree(label);
         XtFree(text);
@@ -116,7 +113,8 @@ static void CopyCB(w, client_data, call_data)
     if (XmClipboardCopy(XtDisplay(box), XtWindow(box), item_id,
                         "STRING", text, strlen(text), private_id,
                         &data_id) != ClipboardSuccess) {
-        XmClipboardCancelCopy(XtDisplay(text), XtWindow(text), item_id);
+//        XmClipboardCancelCopy(XtDisplay(text), XtWindow(text), item_id);
+        XmClipboardCancelCopy(XtDisplay(box), XtWindow(box), item_id);
         XBell(XtDisplay(w), 0);
         XmStringFree(label);
         XtFree(text);
@@ -136,10 +134,8 @@ static void CopyCB(w, client_data, call_data)
 }
 
 /* (11) [Paste] button callback */
-static void PasteCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+PasteCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     char buff[BUFSIZ];
     unsigned long num_bytes;

@@ -13,13 +13,8 @@
 #include <Xm/XmAll.h>
 
 /* Resource converter: Convert bitmap file name to Pixmap */
-Boolean CvtStrToBitmap(display, args, num_args, from, to, converter_data)
-    Display   *display;
-    XrmValue  *args;
-    Cardinal  *num_args;
-    XrmValue  *from;
-    XrmValue  *to;
-    XtPointer *converter_data;
+Boolean 
+CvtStrToBitmap (Display *display, XrmValue *args, Cardinal *num_args, XrmValue *from, XrmValue *to, XtPointer *converter_data)
 {
     Screen *screen = *((Screen**)args[0].addr); /* (1) Screen */
     Widget widget = *((Widget*)args[1].addr);   /* (2) Widget ID */

@@ -13,9 +13,8 @@
 #include <Xm/XmAll.h>  /* Motif header file */
 static void ButtonCB();
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget  toplevel, panel, control, label, text, button;
@@ -57,10 +56,12 @@ main(argc, argv)
 }
 
 /* (5) Event Processing: Create callback function */
-static void ButtonCB(w, client_data, call_data)
-    Widget    w;            /* Widget on which this callback was registered */
-    XtPointer client_data;  /* Client data passed on registration */
-    XtPointer call_data;    /* Callback Struct */
+static void 
+ButtonCB (
+    Widget w,            /* Widget on which this callback was registered */
+    XtPointer client_data,  /* Client data passed on registration */
+    XtPointer call_data    /* Callback Struct */
+)
 {
     Widget text = (Widget) client_data;
     char *filename;

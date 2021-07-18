@@ -9,14 +9,14 @@
  *      This program can be distributed without fee, provided          *
  *      that the above copyright notice appear in all copies.          *
  ***********************************************************************/
-
+#include <stdlib.h>
 #include <Xm/XmAll.h>
 
 #define XOFFSET 20
 #define YOFFSET 60
 static GC gc;
 static XmFontList fontlist[3];
-static XmString *string[100];
+static XmString string[100];
 
 /* (1) Drawn text.  Newline at NULL.  Two NULL at end */
 static char *text[] = { "When", "drawing", "multi-line", NULL,
@@ -29,10 +29,8 @@ static char *fontname[] = { "*-medium-r-normal--16-*",
                             "*-medium-r-normal--24-*" };
 
 /* (6) Redraw text when the window is exposed */
-static void ExposeCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+ExposeCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     int tx, ty;  /* Starting position of each text */
     int i, line = 0;
@@ -68,9 +66,8 @@ static void ExposeCB(w, client_data, call_data)
     }
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, canvas;
@@ -98,7 +95,7 @@ main(argc, argv)
         if ((entry = XmFontListEntryLoad(XtDisplay(canvas), fontname[i],
                          XmFONT_IS_FONTSET, XmFONTLIST_DEFAULT_TAG)) == NULL) {
             fprintf(stderr, "Cannot load fontlist entry: %s\n", fontname[i]);
-            exit(1);
+	    exit(1);
         }
         fontlist[i] = XmFontListAppendEntry(NULL, entry);
         XmFontListEntryFree(&entry);
@@ -116,11 +113,11 @@ main(argc, argv)
         }
         string[i] = XmStringCreateLocalized(text[i]);
     }
-
+    
     XtRealizeWidget(toplevel);
 
     /* (5) Create Graphics Context and set attribute */
-    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), NULL, NULL);
+    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), 0, NULL);
     XSetForeground(XtDisplay(canvas), gc, BlackPixelOfScreen(XtScreen(canvas)));
 
     XtAppMainLoop(app_context);

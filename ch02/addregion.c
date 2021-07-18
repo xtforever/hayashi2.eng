@@ -16,10 +16,8 @@ static GC gc;
 static Region region = NULL;
 
 /* Draw in event function (callback) */
-static void ExposeCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+ExposeCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     XmDrawingAreaCallbackStruct *cb = (XmDrawingAreaCallbackStruct *)call_data;
     int i, j;
@@ -50,9 +48,8 @@ static void ExposeCB(w, client_data, call_data)
     }
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget   toplevel, panel, canvas;
@@ -75,7 +72,7 @@ main(argc, argv)
 
     XtRealizeWidget(toplevel);
 
-    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), NULL, NULL);
+    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), 0, NULL);
     XSetForeground(XtDisplay(canvas), gc, BlackPixelOfScreen(XtScreen(canvas)));
 
     XtAppMainLoop(app_context);

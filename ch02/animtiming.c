@@ -27,9 +27,8 @@ static int position = LEFT;  /* current x position of arc */
 static int direction = LtoR;  /* LtoR: left to right, RtoL: right to left */
 
 /* (2) Timeout callback called in fixed time interval */
-static void TimeoutCB(client_data, id)
-    XtPointer     client_data;
-    XtIntervalId *id;
+static void 
+TimeoutCB (XtPointer client_data, XtIntervalId *id)
 {
     Widget w = (Widget)client_data;
 
@@ -60,9 +59,8 @@ static void TimeoutCB(client_data, id)
                                  INTERVAL, TimeoutCB, w);
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget   toplevel, panel, canvas;
@@ -84,7 +82,7 @@ main(argc, argv)
 
     XtRealizeWidget(toplevel);
 
-    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), NULL, NULL);
+    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), 0, NULL);
     XSetForeground(XtDisplay(canvas), gc, BlackPixelOfScreen(XtScreen(canvas)));
 
     /* (1) Regsiter timeout callback */

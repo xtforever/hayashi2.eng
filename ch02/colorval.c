@@ -9,7 +9,7 @@
  *      This program can be distributed without fee, provided          *
  *      that the above copyright notice appear in all copies.          *
  ***********************************************************************/
-
+#include <stdlib.h>
 #include <Xm/XmAll.h>
 
 static GC gc;
@@ -25,10 +25,8 @@ static XColor colors[] = {
     {0, 35840,     0, 51200, 0, 0},
 };
 
-static void ExposeCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+ExposeCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     int i;
 
@@ -39,9 +37,8 @@ static void ExposeCB(w, client_data, call_data)
     }
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, canvas;
@@ -77,7 +74,7 @@ main(argc, argv)
 
     XtRealizeWidget(toplevel);
 
-    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), NULL, NULL);
+    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), 0, NULL);
 
     XtAppMainLoop(app_context);
 }

@@ -14,18 +14,15 @@
 
 extern XmString StringListToXmString();
 
-static void ShowMessageCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+ShowMessageCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     Widget dialog = (Widget)client_data;
     XtManageChild(dialog);
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget   toplevel, button, dialog;

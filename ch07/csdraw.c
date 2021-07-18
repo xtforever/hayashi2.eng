@@ -18,8 +18,8 @@ static Dimension width, height, x, y;
 static GC gc;
 
 /* (1) Calculate text position from the size of drawing area */
-static void ResetPos(w)
-    Widget w;
+static void 
+ResetPos (Widget w)
 {
     Dimension canvas_w, canvas_h;
     XtVaGetValues(w, XmNwidth, &canvas_w, XmNheight, &canvas_h, NULL);
@@ -28,18 +28,16 @@ static void ResetPos(w)
 }
 
 /* (2) Draw compound string on drawing area */
-static void Redraw(w)
-    Widget w;
+static void 
+Redraw (Widget w)
 {
     XmStringDraw(XtDisplay(w), XtWindow(w), fontlist, string, gc, x, y,
                  width, XmALIGNMENT_CENTER, XmSTRING_DIRECTION_L_TO_R, NULL);
 }
 
 /* (3) Called when the size of drawing area changes */
-static void ResizeCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+ResizeCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     ResetPos(w);
     XClearWindow(XtDisplay(w), XtWindow(w));
@@ -47,17 +45,14 @@ static void ResizeCB(w, client_data, call_data)
 }
 
 /* (4) Called when the drawing area is exposed */
-static void ExposeCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+ExposeCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     Redraw(w);
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget   toplevel, panel, canvas;
@@ -95,7 +90,7 @@ main(argc, argv)
 
     XtRealizeWidget(toplevel);
 
-    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), NULL, NULL);
+    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), 0, NULL);
     XSetForeground(XtDisplay(canvas), gc, BlackPixelOfScreen(XtScreen(canvas)));
 
     XtAppMainLoop(app_context);

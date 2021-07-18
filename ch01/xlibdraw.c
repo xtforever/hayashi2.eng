@@ -21,8 +21,8 @@ static unsigned int rw = 0, rh = 0;
 static int px, py;
 
 /* Recalculate position and size of graphics */
-static void ResetSizeAndPos(event)
-    XEvent event;
+static void 
+ResetSizeAndPos (XEvent event)
 {
     unsigned int old_w, old_h;
     old_w = rw;
@@ -42,18 +42,16 @@ static void ResetSizeAndPos(event)
 }
 
 /* Draw graphic on window */
-static void Redraw(display, window)
-    Display *display;
-    Window window;
+static void 
+Redraw (Display *display, Window window)
 {
     XDrawRectangle(display, window, gc, X, Y, rw, rh);
     XFillArc(display, window, gc, px - ARC/2, py - ARC/2, ARC, ARC,
              0, 360*64);
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     Display *display;
     Window window;
@@ -72,7 +70,7 @@ main(argc, argv)
                  StructureNotifyMask | ExposureMask | ButtonPressMask);
 
     /* (4) Create Graphics Context and set attribute */
-    gc = XCreateGC(display, window, NULL, NULL);
+    gc = XCreateGC(display, window, 0, NULL);
     XSetLineAttributes(display, gc, 2, LineSolid, CapButt, JoinMiter);
 
     while (True) {

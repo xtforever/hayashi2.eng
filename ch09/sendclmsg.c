@@ -15,10 +15,8 @@
 static Atom xa_my_text;
 static Window *destination;
 
-static void SendEventCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+SendEventCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     Widget text = (Widget)client_data;
     char *message;
@@ -27,7 +25,7 @@ static void SendEventCB(w, client_data, call_data)
     /* Retrieve data from text widget */
     message = XmTextFieldGetString(text);
     if (strlen(message) >= 20) /* up to 20 bytes can be sent */
-        message[19] = NULL;
+        message[19] = 0;
 
     /* Create client message event structure */
     clientmsg.type = ClientMessage;
@@ -37,14 +35,13 @@ static void SendEventCB(w, client_data, call_data)
     clientmsg.format = 8;                 /* format of string is 8 */
     strcpy(clientmsg.data.b, message);    /* copy the data */
     /* send the client message event */
-    XSendEvent(XtDisplay(w), *destination, False, NoEventMask, &clientmsg);
+    XSendEvent(XtDisplay(w), *destination, False, NoEventMask, (XEvent *)&clientmsg);
 
     XtFree(message);
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, text, button;
@@ -80,7 +77,8 @@ main(argc, argv)
     /* Retrieve window ID from "_LABEL_WINDOW" of root window */
     if (XGetWindowProperty(XtDisplay(button),
                   RootWindowOfScreen(XtScreen(button)), atom, 0, 1, False,
-                  XA_WINDOW, &type, &format, &nitems, &left, &destination)
+			   XA_WINDOW, &type, &format, &nitems, &left,
+			   (unsigned char **)&destination)
                                             != Success || type != XA_WINDOW)
         fprintf(stderr, "Cannot get window ID from _LABEL_WINDOW property\n");
 

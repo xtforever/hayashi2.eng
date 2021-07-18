@@ -15,9 +15,8 @@
 static void CopyCB();
 static void PasteCB();
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, text, control, copy, paste;
@@ -60,10 +59,8 @@ main(argc, argv)
 }
 
 /* [Copy] button callback */
-static void CopyCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+CopyCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     Widget text = (Widget)client_data;
     char *string;
@@ -74,7 +71,7 @@ static void CopyCB(w, client_data, call_data)
 
     /* retrieve content of text widget */
     string = XmTextGetString(text);
-    if (string == NULL || *string == NULL) {
+    if (string == NULL || *string == 0 ) {
         XBell(XtDisplay(text), 0);
         return;
     }
@@ -115,10 +112,8 @@ static void CopyCB(w, client_data, call_data)
 }
 
 /* [Paste] button callback */
-static void PasteCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+PasteCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     Widget text = (Widget)client_data;
     char buff[BUFSIZ];  /* (1) Prepare fixed size buffer */

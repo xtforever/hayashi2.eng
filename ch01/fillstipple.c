@@ -14,10 +14,8 @@
 
 static GC gc;
 
-static void ExposeCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+ExposeCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     Pixmap stipple = XmGetPixmapByDepth(XtScreen(w), "xlogo32",
                                 WhitePixelOfScreen(XtScreen(w)),
@@ -29,9 +27,8 @@ static void ExposeCB(w, client_data, call_data)
     XFillArc(XtDisplay(w), XtWindow(w), gc,  50, 50, 100, 100, 0*64, 360*64);
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget   toplevel, panel, canvas;
@@ -54,7 +51,7 @@ main(argc, argv)
 
     XtRealizeWidget(toplevel);
 
-    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), NULL, NULL);
+    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), 0, NULL);
 
     XtAppMainLoop(app_context);
 }

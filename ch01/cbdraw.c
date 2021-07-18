@@ -16,10 +16,8 @@ static GC gc;
 static Dimension width, height;
 
 /* (2) Callback of drawing area */
-static void DrawingCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+DrawingCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
   XmDrawingAreaCallbackStruct *cb = (XmDrawingAreaCallbackStruct *)call_data;
 
@@ -39,9 +37,8 @@ static void DrawingCB(w, client_data, call_data)
   }
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget   toplevel, panel, canvas;
@@ -71,7 +68,7 @@ main(argc, argv)
     XtVaGetValues(canvas, XmNwidth, &width, XmNheight, &height, NULL);
 
     /* Create Graphics Context and set line attributes */
-    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), NULL, NULL);
+    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), 0, NULL);
     XSetLineAttributes(XtDisplay(canvas), gc, 2, LineSolid, CapButt, JoinMiter);
 
     XtAppMainLoop(app_context);

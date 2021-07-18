@@ -16,9 +16,8 @@ static void CopyCB();
 static void CutCB();
 static void PasteCB();
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, text, control, copy, cut, paste;
@@ -67,10 +66,8 @@ main(argc, argv)
 }
 
 /* [Copy] button callback */
-static void CopyCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+CopyCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     Widget text = (Widget)client_data;
     Boolean stat;
@@ -79,10 +76,8 @@ static void CopyCB(w, client_data, call_data)
 }
 
 /* [Cut] button callback */
-static void CutCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+CutCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     Widget text = (Widget)client_data;
 
@@ -92,14 +87,13 @@ static void CutCB(w, client_data, call_data)
 }
 
 /* [Paste] button callback */
-static void PasteCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+PasteCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     Widget text = (Widget)client_data;
 
     Boolean stat;
     /* Paste clipboard data into text widget */
-    stat = XmTextPaste(text, XtLastTimestampProcessed(XtDisplay(text)));
+    //    stat = XmTextPaste(text, XtLastTimestampProcessed(XtDisplay(text)));
+    stat = XmTextPaste(text);
 }

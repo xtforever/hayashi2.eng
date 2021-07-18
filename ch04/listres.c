@@ -26,9 +26,8 @@ static XtResource res[] = {  /* Custom resource */
    XtRImmediate, (XtPointer)NULL},
 };
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, list;

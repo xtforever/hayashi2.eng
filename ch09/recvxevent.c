@@ -17,11 +17,8 @@ static GC gc;
 static int x = -ARC, y;
 
 /* Event handler called on button press and motion */
-static void MoveArcEH(w, client_data, event, dispatch)
-    Widget     w;
-    XtPointer  client_data;
-    XEvent    *event;
-    Boolean   *dispatch;
+static void 
+MoveArcEH (Widget w, XtPointer client_data, XEvent *event, Boolean *dispatch)
 {
     /* (3) Move arc to the pointer position */
 
@@ -45,18 +42,15 @@ static void MoveArcEH(w, client_data, event, dispatch)
 }
 
 /* Redraw the arc at same position when drawing area is exposed */
-static void ExposeCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+ExposeCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     XFillArc(XtDisplay(w), XtWindow(w), gc,
              x - ARC/2, y - ARC/2, ARC, ARC, 0, 360*64);
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, canvas;
@@ -87,7 +81,7 @@ main(argc, argv)
     XtRealizeWidget(toplevel);
 
     /* Create a graphics context and set color to black */
-    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), NULL, NULL);
+    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), 0, NULL);
     XSetForeground(XtDisplay(canvas), gc, BlackPixelOfScreen(XtScreen(canvas)));
 
     /* Create atom for window ID */
@@ -96,7 +90,7 @@ main(argc, argv)
     /* (2) Store the window ID in "_CANVAS_WINDOW" of root window */
     window = XtWindow(canvas);
     XChangeProperty(XtDisplay(canvas), RootWindowOfScreen(XtScreen(canvas)),
-                    atom, XA_WINDOW, 32, PropModeReplace, &window, 1);
+                    atom, XA_WINDOW, 32, PropModeReplace, (unsigned char *)&window, 1);
 
     XtAppMainLoop(app_context);
 }

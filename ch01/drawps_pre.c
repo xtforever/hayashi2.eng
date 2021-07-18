@@ -17,17 +17,14 @@ static XPoint points[] = {
     {30, 30}, {30, 50}, {40, -30}, {50, 20}
 };
 
-static void ExposeCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+ExposeCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     XDrawPoints(XtDisplay(w), XtWindow(w), gc, points, 4, CoordModePrevious);
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget   toplevel, panel, canvas;
@@ -50,7 +47,7 @@ main(argc, argv)
 
     XtRealizeWidget(toplevel);
 
-    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), NULL, NULL);
+    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), 0, NULL);
 
     XtAppMainLoop(app_context);
 }

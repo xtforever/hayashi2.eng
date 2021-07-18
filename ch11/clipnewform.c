@@ -10,6 +10,8 @@
  *      that the above copyright notice appear in all copies.          *
  ***********************************************************************/
 
+#include <stdlib.h>
+#include <time.h>
 #include <Xm/XmAll.h>
 
 #define _MY_TIME    "_MY_TIME"
@@ -17,9 +19,8 @@
 static void CopyCB();
 static void PasteCB();
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, clock, control, copy, paste;
@@ -69,10 +70,8 @@ main(argc, argv)
 }
 
 /* [Copy] button callback */
-static void CopyCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+CopyCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     Widget clock = (Widget)client_data;
     XmString label;
@@ -126,10 +125,8 @@ static void CopyCB(w, client_data, call_data)
 }
 
 /* [Paste] button callback */
-static void PasteCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+PasteCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     Widget clock = (Widget)client_data;
     char buff[BUFSIZ];

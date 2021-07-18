@@ -12,9 +12,8 @@
 
 #include <Xm/XmAll.h>
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, canvas;
@@ -53,7 +52,7 @@ main(argc, argv)
 
     /* (2) Get application name from "_MY_NAME" property of root window */
     if (XGetWindowProperty(XtDisplay(toplevel), root, atom1, 0, 100, False,
-                           XA_STRING, &type, &format, &nitems, &left, &name)
+                           XA_STRING, &type, &format, &nitems, &left, (unsigned char **)&name)
                                              == Success && type == XA_STRING) {
         printf("_MY_NAME: %s\n", name);
         XFree(name);  /* free if necessary */
@@ -61,7 +60,7 @@ main(argc, argv)
 
     /* (3) Get process ID from "_MY_PROC" property of root window */
     if (XGetWindowProperty(XtDisplay(toplevel), root, atom2, 0, 1, False,
-                           XA_INTEGER, &type, &format, &nitems, &left, &pid)
+                           XA_INTEGER, &type, &format, &nitems, &left, (unsigned char **)&pid)
                                             == Success && type == XA_INTEGER) {
         printf("_MY_PROC: %d\n", *pid);
         XFree(pid);  /* free if necessary */
@@ -69,7 +68,8 @@ main(argc, argv)
 
     /* (4) Get window ID from "_MY_WINDOW" property of root window */
     if (XGetWindowProperty(XtDisplay(toplevel), root, atom3, 0, 1, False,
-                           XA_WINDOW, &type, &format, &nitems, &left, &window)
+                           XA_WINDOW, &type, &format, &nitems, &left,
+			   (unsigned char **)&window)
                                              == Success && type == XA_WINDOW) {
         printf("_MY_WINDOW: 0x%x\n", *window);
         XFree(window);  /* free if necessary */

@@ -10,6 +10,7 @@
  *      that the above copyright notice appear in all copies.          *
  ***********************************************************************/
 
+#include <stdlib.h>
 #include <Xm/XmAll.h>
 
 static GC gc;
@@ -22,18 +23,15 @@ static char *colornames[] = {
     "red", "orange", "yellow", "green", "light sea green", "blue", "violet"
 };
 
-static void ExposeCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+ExposeCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     /* (6) copy image onto window */
     XPutImage(XtDisplay(w), XtWindow(w), gc, image, 0, 0, 0, 0, width, height);
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, canvas;
@@ -73,7 +71,7 @@ main(argc, argv)
 
     XtRealizeWidget(toplevel);
 
-    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), NULL, NULL);
+    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), 0, NULL);
 
     /* (1) query window information of drawing area */
     XtVaGetValues(canvas, XmNvisual, &visual,

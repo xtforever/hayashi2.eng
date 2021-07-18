@@ -21,8 +21,8 @@ static unsigned int rw = 0, rh = 0;
 static int px, py;
 
 /* Recalculate position and size of graphics */
-static void ResetSizeAndPos(w)
-    Widget w;
+static void 
+ResetSizeAndPos (Widget w)
 {
     unsigned int old_w, old_h;
     old_w = rw;
@@ -43,8 +43,8 @@ static void ResetSizeAndPos(w)
 }
 
 /* Draw graphic on window */
-static void Redraw(w)
-    Widget w;
+static void 
+Redraw (Widget w)
 {
     XDrawRectangle(XtDisplay(w), XtWindow(w), gc, X, Y, rw, rh);
     XFillArc(XtDisplay(w), XtWindow(w), gc, px - ARC/2, py - ARC/2, ARC, ARC,
@@ -54,10 +54,8 @@ static void Redraw(w)
 /* (5) Draw in event function (callback) */
 
 /* Recalculate size of graphics when size of drawing area changed */
-static void ResizeCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+ResizeCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     ResetSizeAndPos(w);
     XClearWindow(XtDisplay(w), XtWindow(w));
@@ -65,19 +63,15 @@ static void ResizeCB(w, client_data, call_data)
 }
 
 /* Redraw graphics when drawing area is exposed */
-static void ExposeCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+ExposeCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     Redraw(w);
 }
 
 /* Draw graphic at button is pressed on drawing area */
-static void InputCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+InputCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     XmDrawingAreaCallbackStruct *cb = (XmDrawingAreaCallbackStruct *)call_data;
     if (cb->event->type == ButtonPress) {
@@ -88,9 +82,8 @@ static void InputCB(w, client_data, call_data)
     }
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget   toplevel, panel, canvas;
@@ -123,7 +116,7 @@ main(argc, argv)
     /* (2') Window is created here */
 
     /* (4) Create Graphics Context and set attribute */
-    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), NULL, NULL);
+    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), 0, NULL);
     XSetLineAttributes(XtDisplay(canvas), gc, 2, LineSolid, CapButt, JoinMiter);
 
     XtAppMainLoop(app_context);

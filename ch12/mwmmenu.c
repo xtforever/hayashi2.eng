@@ -22,9 +22,8 @@ menu1     _1    Ctrl<Key>F1    f.send_msg  1  \n\
 menu2     _2    Ctrl<Key>F2    f.send_msg  2  \n\
 menu3     _3    Ctrl<Key>F3    f.send_msg  3  ";
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel;
@@ -59,10 +58,8 @@ main(argc, argv)
 }
 
 /* (4) Called when additional menu is selected */
-static void MenuCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+MenuCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     int menu_no = (int)client_data;  /* selected menu number */
     char buff[40];

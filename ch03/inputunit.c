@@ -32,9 +32,8 @@ static XrmOptionDescRec opt[] = {  /* (Opt1) Custom option */
     {"-inch", "*inputByMm", XrmoptionNoArg, "False"}, /* inch */
 };
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, text, label;

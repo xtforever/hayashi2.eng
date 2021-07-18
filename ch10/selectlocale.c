@@ -10,6 +10,7 @@
  *      that the above copyright notice appear in all copies.          *
  ***********************************************************************/
 
+#include <stdlib.h>
 #include <Xm/XmAll.h>
 
 static void SelectCB();
@@ -21,15 +22,15 @@ static void GetValueProc();
 
 static Atom xa_locale;
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, text, select, paste;
     Arg al[20];
     int ac;
     XTextProperty textprop;
+    char *lst=NULL;
 
     XtSetLanguageProc(NULL, NULL, NULL);
     ac = 0;
@@ -58,7 +59,7 @@ main(argc, argv)
     XtManageChild(paste);
 
     /* (1) Query character code of current locale */
-    if (XmbTextListToTextProperty(XtDisplay(toplevel), "", 1,
+    if (XmbTextListToTextProperty(XtDisplay(toplevel), &lst, 1,
                                   XTextStyle, &textprop) != Success) {
         fprintf(stderr, "Cannot get encoding info.\n");
         exit(1);
@@ -70,10 +71,8 @@ main(argc, argv)
 }
 
 /* Owner: [Select Text] button callback */
-static void SelectCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+SelectCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     Widget text = (Widget)client_data;
 
@@ -87,9 +86,8 @@ static void SelectCB(w, client_data, call_data)
 }
 
 /* Owner: Called when ownership is lost */
-static void LoseProc(w, selection)
-    Widget w;
-    Atom *selection;
+static void 
+LoseProc (Widget w, Atom *selection)
 {
     /* If ownership is lost, reset the inversion */
     if (*selection == XA_PRIMARY)
@@ -97,10 +95,8 @@ static void LoseProc(w, selection)
 }
 
 /* Requestor: [Paste] button callback */
-static void PasteCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+PasteCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     Widget text = (Widget)client_data;
 
@@ -110,15 +106,8 @@ static void PasteCB(w, client_data, call_data)
 }
 
 /* Owner: Called when selection data is requested */
-static Boolean ConvertProc(w, selection, target,
-                           type_ret, val_ret, len_ret, format_ret)
-    Widget w;
-    Atom *selection;
-    Atom *target;
-    Atom *type_ret;
-    XtPointer *val_ret;
-    unsigned long *len_ret;
-    int *format_ret;
+static Boolean 
+ConvertProc (Widget w, Atom *selection, Atom *target, Atom *type_ret, XtPointer *val_ret, unsigned long *len_ret, int *format_ret)
 {
     char *string;
 
@@ -137,14 +126,8 @@ static Boolean ConvertProc(w, selection, target,
 }
 
 /* Requestor: Called when selection data is received */
-static void GetValueProc(w, client_data, selection, type, val, len, format)
-    Widget w;
-    XtPointer client_data;
-    Atom *selection;
-    Atom *type;
-    XtPointer val;
-    unsigned long *len;
-    int *format;
+static void 
+GetValueProc (Widget w, XtPointer client_data, Atom *selection, Atom *type, XtPointer val, unsigned long *len, int *format)
 {
     if (*len == 0 || val == NULL) { /* Failed to receive selection data */
         XBell(XtDisplay(w), 0);  /* notify the fail by bell */
@@ -162,10 +145,8 @@ static void GetValueProc(w, client_data, selection, type, val, len, format)
 }
 
 /* Owner: Called after requestor received the selection data */
-static void DoneProc(w, selection, target)
-    Widget w;
-    Atom *selection;
-    Atom *target;
+static void 
+DoneProc (Widget w, Atom *selection, Atom *target)
 {
     /* Do the necessary thing after transferring the data. */
     /* If this callback is registered, application must free the selection data.  */

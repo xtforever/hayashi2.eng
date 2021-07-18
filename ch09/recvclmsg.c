@@ -16,11 +16,8 @@ static Atom xa_my_text;
 static Window window;
 
 /* Called when client message event is received */
-static void ClientMsgEH(w, client_data, event, dispatch)
-    Widget     w;
-    XtPointer  client_data;
-    XEvent    *event;
-    Boolean   *dispatch;
+static void 
+ClientMsgEH (Widget w, XtPointer client_data, XEvent *event, Boolean *dispatch)
 {
     XmString string;
 
@@ -34,9 +31,8 @@ static void ClientMsgEH(w, client_data, event, dispatch)
     }
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, label;
@@ -66,7 +62,7 @@ main(argc, argv)
     /* Store window ID in "_LABEL_WINDOW" of root window */
     window = XtWindow(label);
     XChangeProperty(XtDisplay(label), RootWindowOfScreen(XtScreen(label)),
-                    atom, XA_WINDOW, 32, PropModeReplace, &window, 1);
+                    atom, XA_WINDOW, 32, PropModeReplace, (const unsigned char *)&window, 1);
 
     XtAppMainLoop(app_context);
 }

@@ -19,9 +19,8 @@ static void LoseProc();
 static void DoneProc();
 static void GetValueProc();
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, text, select, paste;
@@ -59,10 +58,8 @@ main(argc, argv)
 }
 
 /* (4) Owner: [Select Text] button callback */
-static void SelectCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+SelectCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     Widget text = (Widget)client_data;
 
@@ -76,9 +73,8 @@ static void SelectCB(w, client_data, call_data)
 }
 
 /* (7) Owner: Called when ownership is lost */
-static void LoseProc(w, selection)
-    Widget w;
-    Atom *selection;
+static void 
+LoseProc (Widget w, Atom *selection)
 {
     /* (8) If ownership is lost, reset the inversion */
     if (*selection == XA_PRIMARY)
@@ -86,10 +82,8 @@ static void LoseProc(w, selection)
 }
 
 /* (9) Requestor: [Paste] button callback */
-static void PasteCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+PasteCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     Widget text = (Widget)client_data;
 
@@ -99,15 +93,8 @@ static void PasteCB(w, client_data, call_data)
 }
 
 /* (11) Owner: Called when selection data is requested */
-static Boolean ConvertProc(w, selection, target,
-                           type_ret, val_ret, len_ret, format_ret)
-    Widget w;
-    Atom *selection;
-    Atom *target;
-    Atom *type_ret;
-    XtPointer *val_ret;
-    unsigned long *len_ret;
-    int *format_ret;
+static Boolean 
+ConvertProc (Widget w, Atom *selection, Atom *target, Atom *type_ret, XtPointer *val_ret, unsigned long *len_ret, int *format_ret)
 {
     char *string;
 
@@ -125,14 +112,8 @@ static Boolean ConvertProc(w, selection, target,
 }
 
 /* (13) Requestor: Called when selection data is received */
-static void GetValueProc(w, client_data, selection, type, val, len, format)
-    Widget w;
-    XtPointer client_data;
-    Atom *selection;
-    Atom *type;
-    XtPointer val;
-    unsigned long *len;
-    int *format;
+static void 
+GetValueProc (Widget w, XtPointer client_data, Atom *selection, Atom *type, XtPointer val, unsigned long *len, int *format)
 {
     if (*len == 0 || val == NULL) { /* Failed to receive selection data */
         XBell(XtDisplay(w), 0);  /* notify the fail by bell */
@@ -149,10 +130,8 @@ static void GetValueProc(w, client_data, selection, type, val, len, format)
 }
 
 /* (15) Owner: Called after requestor received the selection data */
-static void DoneProc(w, selection, target)
-    Widget w;
-    Atom *selection;
-    Atom *target;
+static void 
+DoneProc (Widget w, Atom *selection, Atom *target)
 {
     /* Do the necessary thing after transferring the data. */
     /* If this callback is registered, application must free the selection data. */

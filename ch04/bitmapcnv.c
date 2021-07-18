@@ -17,10 +17,8 @@ extern Boolean CvtStrToBitmap(); /* Resource Converter */
 static GC gc; /* Graphics Context (necessary for Xlib drawing functions) */
 static Widget label;
 
-static void ChangeBitmapCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+ChangeBitmapCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     Widget text = (Widget)client_data;
     char *filename; /* bitmap file name  (source data of conversion) */
@@ -30,7 +28,7 @@ static void ChangeBitmapCB(w, client_data, call_data)
     /* (1) Input new bitmap file name */
     filename = XmTextFieldGetString(text);
     /* (2) Without input, set focus to input area and bell */
-    if (filename == NULL || *filename == NULL) {
+    if (filename == NULL || *filename == 0 ) {
         XmProcessTraversal(text, XmTRAVERSE_CURRENT);
         XBell(XtDisplay(w), 0);
         return;
@@ -40,7 +38,7 @@ static void ChangeBitmapCB(w, client_data, call_data)
     source.size = strlen(filename) + 1;  /* size for source data */
     source.addr = filename;              /* source data */
     dest.size = sizeof(Pixmap);   /* size of target data (integer) */
-    dest.addr = &bitmap;          /* storage for target data */
+    dest.addr = (XtPointer)&bitmap;          /* storage for target data */
 
     /* (3) Convert bitmap file name to Pixmap */
     if (!XtConvertAndStore(label, XtRString, &source, XtRBitmap, &dest)) {
@@ -54,9 +52,8 @@ static void ChangeBitmapCB(w, client_data, call_data)
     XtVaSetValues(label, XmNlabelPixmap, bitmap, NULL);
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, text, button;
@@ -106,6 +103,6 @@ main(argc, argv)
     XtVaSetValues(text,  XmNbottomWidget, button, NULL);
 
     XtRealizeWidget(toplevel);
-    gc = XCreateGC(XtDisplay(label), XtWindow(label), NULL, NULL);
+    gc = XCreateGC(XtDisplay(label), XtWindow(label), 0, NULL);
     XtAppMainLoop(app_context);
 }

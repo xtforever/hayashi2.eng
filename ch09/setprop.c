@@ -9,12 +9,11 @@
  *      This program can be distributed without fee, provided          *
  *      that the above copyright notice appear in all copies.          *
  ***********************************************************************/
-
+#include <unistd.h>
 #include <Xm/XmAll.h>
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, canvas;
@@ -53,14 +52,14 @@ main(argc, argv)
     /* (3) Store process ID in "_MY_PROC" of root window */
     pid = getpid();
     XChangeProperty(XtDisplay(toplevel), RootWindowOfScreen(XtScreen(toplevel)),
-                    atom2, XA_INTEGER, 32, PropModeReplace, &pid, 1);
+                    atom2, XA_INTEGER, 32, PropModeReplace, (const unsigned char *)&pid, 1);
 
     XtRealizeWidget(toplevel); /* window of widget is created here */
 
     /* (4) Store window ID in "_MY_WINDOW" of root window */
     window = XtWindow(canvas);
     XChangeProperty(XtDisplay(toplevel), RootWindowOfScreen(XtScreen(toplevel)),
-                    atom3, XA_WINDOW, 32, PropModeReplace, &window, 1);
+                    atom3, XA_WINDOW, 32, PropModeReplace, (const unsigned char *)&window, 1);
 
     XtAppMainLoop(app_context);
 }

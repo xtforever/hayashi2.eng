@@ -19,10 +19,8 @@ static Widget question;
 static nl_catd catd;
 
 /* "File" menu callback */
-static void FileMenuCB(w, client_data, call_data)
-    Widget    w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+FileMenuCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     int menu_item = (int)client_data;  /* selected menu number */
     char *text;
@@ -51,8 +49,8 @@ static void FileMenuCB(w, client_data, call_data)
 }
 
 /* Create menu bar and pulldown menu */
-static Widget CreateMenu(parent)
-    Widget parent;
+static Widget 
+CreateMenu (Widget parent)
 {
     Widget  menubar, filemenu;
 
@@ -74,9 +72,8 @@ static Widget CreateMenu(parent)
     return(menubar);
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, mainwin, menubar, work, text;

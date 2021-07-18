@@ -14,10 +14,8 @@
 
 static GC gc;
 
-static void ExposeCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+ExposeCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     static XPoint points1[] = { {50, 80}, {100, 40}, {150, 80} };
     static XPoint points2[] = { {50, 120}, {100, 80}, {150, 120} };
@@ -33,9 +31,8 @@ static void ExposeCB(w, client_data, call_data)
     XDrawLines(XtDisplay(w), XtWindow(w), gc, points3, 3, CoordModeOrigin);
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget   toplevel, panel, canvas;
@@ -58,7 +55,7 @@ main(argc, argv)
 
     XtRealizeWidget(toplevel);
 
-    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), NULL, NULL);
+    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), 0, NULL);
     XSetForeground(XtDisplay(canvas), gc, BlackPixelOfScreen(XtScreen(canvas)));
 
     XtAppMainLoop(app_context);

@@ -30,10 +30,8 @@ static XrmOptionDescRec opt[] = { /* (3) Custom Option */
 };
 
 /* (4) Redraw pixmap when drawing area is exposed or resized */
-static void RedrawCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+RedrawCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     Pixmap bitmap = (Pixmap)client_data;
     XmDrawingAreaCallbackStruct *cb = (XmDrawingAreaCallbackStruct *)call_data;
@@ -60,9 +58,8 @@ static void RedrawCB(w, client_data, call_data)
               (dw - pw) / 2, (dh - ph) / 2);
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, canvas;
@@ -101,10 +98,10 @@ main(argc, argv)
     /* (7) Get custom resource (Resouce converter is called) */
     XtGetApplicationResources(canvas, &data, res, XtNumber(res), NULL, 0);
             /* The created pixmap ID is stored in data.bitmap */
-    XtAddCallback(canvas, XmNexposeCallback, RedrawCB, data.bitmap);
-    XtAddCallback(canvas, XmNresizeCallback, RedrawCB, data.bitmap);
+    XtAddCallback(canvas, XmNexposeCallback, RedrawCB, (XtPointer)data.bitmap);
+    XtAddCallback(canvas, XmNresizeCallback, RedrawCB, (XtPointer)data.bitmap);
 
     XtRealizeWidget(toplevel);
-    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), NULL, NULL);
+    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), 0, NULL);
     XtAppMainLoop(app_context);
 }

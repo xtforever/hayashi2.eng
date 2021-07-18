@@ -21,9 +21,8 @@ static void GetValueProc();
 
 static Atom xa_filename;
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, text, copy, paste0, paste1;
@@ -71,10 +70,8 @@ main(argc, argv)
 }
 
 /* Owner: [Copy] button callback */
-static void CopyCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+CopyCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     Widget text = (Widget)client_data;
 
@@ -88,9 +85,8 @@ static void CopyCB(w, client_data, call_data)
 }
 
 /* Owner: Called when ownership is lost */
-static void LoseProc(w, selection)
-    Widget w;
-    Atom *selection;
+static void 
+LoseProc (Widget w, Atom *selection)
 {
     /* If ownership is lost, reset the inversion */
     if (*selection == XA_PRIMARY)
@@ -98,10 +94,8 @@ static void LoseProc(w, selection)
 }
 
 /* Owner: [Absolute Path] button callback */
-static void Paste0CB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+Paste0CB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     Widget text = (Widget)client_data;
     int which = 0;
@@ -115,10 +109,8 @@ static void Paste0CB(w, client_data, call_data)
 }
 
 /* Owner: [File Name] button callback */
-static void Paste1CB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+Paste1CB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     Widget text = (Widget)client_data;
     int which = 1;
@@ -132,15 +124,8 @@ static void Paste1CB(w, client_data, call_data)
 }
 
 /* Owner: Called when selection data is requested */
-static Boolean ConvertProc(w, selection, target,
-                           type_ret, val_ret, len_ret, format_ret)
-    Widget w;
-    Atom *selection;
-    Atom *target;
-    Atom *type_ret;
-    XtPointer *val_ret;
-    unsigned long *len_ret;
-    int *format_ret;
+static Boolean 
+ConvertProc (Widget w, Atom *selection, Atom *target, Atom *type_ret, XtPointer *val_ret, unsigned long *len_ret, int *format_ret)
 {
     char *string;
     Atom param_type;
@@ -169,14 +154,8 @@ static Boolean ConvertProc(w, selection, target,
 }
 
 /* Requestor: Called when selection data is received */
-static void GetValueProc(w, client_data, selection, type, val, len, format)
-    Widget w;
-    XtPointer client_data;
-    Atom *selection;
-    Atom *type;
-    XtPointer val;
-    unsigned long *len;
-    int *format;
+static void 
+GetValueProc (Widget w, XtPointer client_data, Atom *selection, Atom *type, XtPointer val, unsigned long *len, int *format)
 {
     if (*len == 0 || val == NULL) { /* Failed to receive selection data */
         XBell(XtDisplay(w), 0);  /* notify the fail by bell */

@@ -13,10 +13,8 @@
 #include <Xm/XmAll.h>
 
 /* [Copy] button callback */
-static void StoreCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+StoreCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     Widget text = (Widget)client_data;
     char *data;
@@ -27,10 +25,8 @@ static void StoreCB(w, client_data, call_data)
 }
 
 /* [Paste] button callback */
-static void FetchCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+FetchCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     Widget text = (Widget)client_data;
     char *data;
@@ -41,9 +37,8 @@ static void FetchCB(w, client_data, call_data)
     XFree(data);
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, text, store, fetch;

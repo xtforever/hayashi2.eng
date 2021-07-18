@@ -9,7 +9,7 @@
  *      This program can be distributed without fee, provided          *
  *      that the above copyright notice appear in all copies.          *
  ***********************************************************************/
-
+#include <stdlib.h>
 #include <Xm/XmAll.h>
 
 /* (1) Define custom options */
@@ -22,17 +22,16 @@ static XrmOptionDescRec opt[] = {
 };
 
 /* (B) Show usage (valid options) */
-static void Usage(name)
-    char *name;
+static void 
+Usage (char *name)
 {
     fprintf(stderr, "Usage: %s [-label <string>] [-c<color>]\n", name);
     fprintf(stderr, "       [-on] [-down]\n");
     exit(1);
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget  toplevel, panel, toggle, arrow;

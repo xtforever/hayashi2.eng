@@ -9,7 +9,8 @@
  *      This program can be distributed without fee, provided          *
  *      that the above copyright notice appear in all copies.          *
  ***********************************************************************/
-
+#include <stdlib.h>
+#include <stdint.h>
 #include <Xm/XmAll.h>
 
 static Widget sample;
@@ -19,16 +20,14 @@ static unsigned long pixel;
 static unsigned long red = 0, green = 0, blue = 0;
 
 /* Callback of scale */
-static void ChangeColorCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+XChangeColorCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     XmScaleCallbackStruct *cb = (XmScaleCallbackStruct *)call_data;
     XColor color;
 
     /* Set new value */
-    switch ((int)client_data) {  /* Which scale is changed ? */
+    switch ((intptr_t)client_data) {  /* Which scale is changed ? */
         case 0: red   = cb->value; break;  /* red scale */
         case 1: green = cb->value; break;  /* green scale */
         case 2: blue  = cb->value; break;  /* blue scale */
@@ -40,19 +39,41 @@ static void ChangeColorCB(w, client_data, call_data)
     color.blue  = blue  * 256;  /* multiply 256 and use as RGB value */
     color.flags = DoRed | DoGreen | DoBlue;  /* change RGB element */
 
+#if 0
     /* Allocate color by color value */
     if (XStoreColor(XtDisplay(w), colormap, &color) == 0) {
         fprintf(stderr, "Cannot allocate the new color\n");
         exit(1);
     }
-
+#endif
     /* Set color pixel to the background of sample widget */
     XtVaSetValues(sample, XmNbackground, color.pixel, NULL);
 }
+static void  
+ChangeColorCB (Widget w, XtPointer client_data, XtPointer call_data)
+{
+    int rgb = (intptr_t) client_data;
+    XmScaleCallbackStruct *cbs = (XmScaleCallbackStruct *) call_data;
+    Colormap cmap = DefaultColormapOfScreen (XtScreen (w));
+    static XColor color; 
+    switch (rgb) {
+        case 0: color.red = (cbs->value << 8); break;
+        case 1: color.green = (cbs->value << 8); break;
+        case 2: color.blue = (cbs->value << 8);	  
+    }
+    /* reuse the same color again and again */
+    color.flags = DoRed | DoGreen | DoBlue;  /* change RGB element */
+    XFreeColors (XtDisplay (w), cmap, &color.pixel, 1, 0);
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+    if (!XAllocColor (XtDisplay (w), cmap, &color)) {
+        puts ("Couldn't XAllocColor!"); exit(1);
+    }
+
+    XtVaSetValues (sample, XmNbackground, color.pixel, NULL);
+}
+
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, control, scales[3];
@@ -84,23 +105,27 @@ main(argc, argv)
         ac = 0;
         sprintf(wname, "scale%d", i);
         scales[i] = XmCreateScale(control, wname, al, ac);
-        XtAddCallback(scales[i], XmNdragCallback, ChangeColorCB, i);
+	// (intptr_t)(XtPointer)
+	//        XtAddCallback(scales[i], XmNdragCallback, ChangeColorCB, i);
+	XtAddCallback(scales[i], XmNdragCallback, ChangeColorCB,i);
         XtAddCallback(scales[i], XmNvalueChangedCallback, ChangeColorCB, i);
     }
     XtManageChildren(scales, 3);
 
     /* Get default color map */
     colormap = DefaultColormapOfScreen(XtScreen(sample));
+
+#if 0
     /* Own one private color cell */
     if (XAllocColorCells(XtDisplay(sample), colormap,
                          False, &plane, 0, &pixel, 1) == 0) {
         fprintf(stderr, "Cannot allocate color cell.\n");
         exit(1);
     }
-
+#endif
     XtRealizeWidget(toplevel);
 
-    gc = XCreateGC(XtDisplay(sample), XtWindow(sample), NULL, NULL);
+    gc = XCreateGC(XtDisplay(sample), XtWindow(sample), 0, NULL);
 
     XtVaSetValues(sample,
                   XmNbackground, BlackPixelOfScreen(XtScreen(sample)), NULL);

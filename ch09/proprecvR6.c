@@ -14,11 +14,8 @@
 
 static Atom atom;
 
-static void RecvNotifyEH(w, client_data, event, dispatch)
-    Widget     w;
-    XtPointer  client_data;
-    XEvent    *event;
-    Boolean   *dispatch;
+static void 
+RecvNotifyEH (Widget w, XtPointer client_data, XEvent *event, Boolean *dispatch)
 {
     XmString string;
 
@@ -33,9 +30,8 @@ static void RecvNotifyEH(w, client_data, event, dispatch)
     }
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, label;

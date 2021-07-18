@@ -28,10 +28,8 @@ static char *fontname[] = { "*-medium-r-normal--16-*",
                             "*-medium-r-normal--24-*" };
 
 /* (5) Redraw text when the window is exposed */
-static void ExposeCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+ExposeCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     int tx, ty;  /* Starting position of each text */
     int i, line = 0;
@@ -66,15 +64,14 @@ static void ExposeCB(w, client_data, call_data)
     }
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, canvas;
     Arg    al[20];
     int    ac;
-    char **miss, def;
+    char **miss, *def;
     int    n_miss, i, j;
 
     XtSetLanguageProc(NULL, NULL, NULL);
@@ -106,7 +103,7 @@ main(argc, argv)
     XtRealizeWidget(toplevel);
 
     /* (4) Create Graphics Context and set attribute */
-    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), NULL, NULL);
+    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), 0, NULL);
     XSetForeground(XtDisplay(canvas), gc, BlackPixelOfScreen(XtScreen(canvas)));
 
     XtAppMainLoop(app_context);

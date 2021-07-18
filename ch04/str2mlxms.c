@@ -9,23 +9,20 @@
  *      This program can be distributed without fee, provided          *
  *      that the above copyright notice appear in all copies.          *
  ***********************************************************************/
-
+#include <stdlib.h>
+#include <wchar.h>
 #include <Xm/XmAll.h>
 
 /* Resource Converter: Convert a string into multi line compound string */
 /*                       Insert new line at "\n" */
-Boolean CvtStrToMultiLineXmString(display, args, num_args, from, to, data)
-    Display   *display;
-    XrmValue  *args;
-    Cardinal  *num_args;
-    XrmValue  *from;
-    XrmValue  *to;
-    XtPointer *data;
+Boolean 
+CvtStrToMultiLineXmString (Display *display, XrmValue *args, Cardinal *num_args, XrmValue *from, XrmValue *to, XtPointer *data)
 {
     char     *string = from->addr;  /* string containing "\n" */
     wchar_t   wcs_str[BUFSIZ + 1], *wcs_ptr, *wcs_token, wcs_newline[BUFSIZ];
     size_t    length;
     char      token[BUFSIZ + 1];
+    wchar_t   *buffer;
     XmString  whole = NULL, oneline, work, newline;
 
     to->size = sizeof(XmString);
@@ -45,7 +42,7 @@ Boolean CvtStrToMultiLineXmString(display, args, num_args, from, to, data)
     newline = XmStringSeparatorCreate();
 
     /* (3) Repeat at "\n" */
-    while ((wcs_token = wcstok(wcs_ptr, wcs_newline)) != NULL) {
+    while ((wcs_token = wcstok(wcs_ptr, wcs_newline,&buffer)) != NULL) {
         wcs_ptr = NULL;
         /* (4) Convert back the wide character string to multi byte string */
         length = wcstombs(token, wcs_token, BUFSIZ);

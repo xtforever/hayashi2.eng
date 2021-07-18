@@ -17,11 +17,8 @@ static GC gc;
 static int x = -ARC, y;
 
 /* (2) Event handler when button is pressed or pointer is moved */
-static void MoveArcEH(w, client_data, event, dispatch)
-    Widget     w;
-    XtPointer  client_data;
-    XEvent    *event;
-    Boolean   *dispatch;
+static void 
+MoveArcEH (Widget w, XtPointer client_data, XEvent *event, Boolean *dispatch)
 {
     /* (3) Only left mouse button */
     if (event->type == ButtonPress && event->xbutton.button != Button1)
@@ -43,18 +40,15 @@ static void MoveArcEH(w, client_data, event, dispatch)
 }
 
 /* (7) Redraw arc when the drawing area is exposed */
-static void ExposeCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+ExposeCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     XFillArc(XtDisplay(w), XtWindow(w), gc,
              x - ARC/2, y - ARC/2, ARC, ARC, 0, 360*64);
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget  toplevel, panel, canvas;
@@ -80,7 +74,7 @@ main(argc, argv)
 
     XtRealizeWidget(toplevel);
 
-    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), NULL, NULL);
+    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), 0, NULL);
     XSetForeground(XtDisplay(canvas), gc, BlackPixelOfScreen(XtScreen(canvas)));
 
     XtAppMainLoop(app_context);

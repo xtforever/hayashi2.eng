@@ -49,9 +49,8 @@ static XrmOptionDescRec opt[] = {
     {"-skip3", NULL, XrmoptionSkipNArgs, (XtPointer)3}, /* ignore next 3 args */
 };
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget  toplevel, panel, toggle, arrow;

@@ -10,13 +10,12 @@
  *      that the above copyright notice appear in all copies.          *
  ***********************************************************************/
 
+#include <wctype.h>
 #include <wchar.h>
 #include <Xm/XmAll.h>
 
-static void CheckInputCB(w, client_data, call_data)
-    Widget    w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+CheckInputCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     XmTextVerifyPtrWcs cb = (XmTextVerifyPtrWcs)call_data;
     int i;
@@ -32,9 +31,8 @@ static void CheckInputCB(w, client_data, call_data)
     }
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, text;

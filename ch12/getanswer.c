@@ -9,13 +9,11 @@
  *      This program can be distributed without fee, provided          *
  *      that the above copyright notice appear in all copies.          *
  ***********************************************************************/
-
+#include <stdlib.h>
 #include <Xm/XmAll.h>
 
-static void DialogCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+DialogCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     Boolean answer = (Boolean)client_data;
     /* (7) Select return value in accordance with the answer from user */
@@ -23,9 +21,8 @@ static void DialogCB(w, client_data, call_data)
     else        exit(1);  /* the user answered [No] */
 }
 
-main(argc, argv)
-    int argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, dialog;

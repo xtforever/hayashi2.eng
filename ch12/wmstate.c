@@ -23,9 +23,8 @@ static void WithdrawCB(), Withdraw2Icon(), Icon2Normal();
 static void IconifyCB(), Icon2Withdraw(), Withdraw2Normal();
 static void MappedEH(), StateEH();
 
-main(argc, argv)
-    int argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, withdraw, iconify;
@@ -62,10 +61,8 @@ main(argc, argv)
 }
 
 /* (4) [Withdrawn -> Iconic -> Normal] button callback */
-static void WithdrawCB(w, client_data, call_data)
-    Widget    w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+WithdrawCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     Widget toplevel = (Widget)client_data;
     XtIntervalId timeout_id;
@@ -79,9 +76,8 @@ static void WithdrawCB(w, client_data, call_data)
 }
 
 /* (7) Called 3 seconds after WithdrawCB() */
-static void Withdraw2Icon(client_data, id)
-    XtPointer     client_data;
-    XtIntervalId *id;
+static void 
+Withdraw2Icon (XtPointer client_data, XtIntervalId *id)
 {
     Widget toplevel = (Widget)client_data;
     XtIntervalId timeout_id;
@@ -96,9 +92,8 @@ static void Withdraw2Icon(client_data, id)
 }
 
 /* (10) called 3 seconds after Withdraw2Icon() */
-static void Icon2Normal(client_data, id)
-    XtPointer     client_data;
-    XtIntervalId *id;
+static void 
+Icon2Normal (XtPointer client_data, XtIntervalId *id)
 {
     Widget toplevel = (Widget)client_data;
 
@@ -107,10 +102,8 @@ static void Icon2Normal(client_data, id)
 }
 
 /* (12) [Iconic -> Withdrawn -> Normal] button callback */
-static void IconifyCB(w, client_data, call_data)
-    Widget    w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+IconifyCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     Widget toplevel = (Widget)client_data;
     XtIntervalId timeout_id;
@@ -125,9 +118,8 @@ static void IconifyCB(w, client_data, call_data)
 }
 
 /* (15) called 3 seconds after IconifyCB() */
-static void Icon2Withdraw(client_data, id)
-    XtPointer     client_data;
-    XtIntervalId *id;
+static void 
+Icon2Withdraw (XtPointer client_data, XtIntervalId *id)
 {
     Widget toplevel = (Widget)client_data;
     XtIntervalId timeout_id;
@@ -142,7 +134,7 @@ static void Icon2Withdraw(client_data, id)
     unmap.from_configure = False;
     /* send the event to root window */
     XSendEvent(XtDisplay(toplevel), RootWindowOfScreen(XtScreen(toplevel)),
-              False, SubstructureRedirectMask | SubstructureNotifyMask, &unmap);
+	       False, SubstructureRedirectMask | SubstructureNotifyMask, (XEvent *)&unmap);
 
     /* (17) call Withdraw2Normal() 3 seconds later */
     timeout_id = XtAppAddTimeOut(XtWidgetToApplicationContext(toplevel),
@@ -150,9 +142,8 @@ static void Icon2Withdraw(client_data, id)
 }
 
 /* (18) called 3 seconds after Icon2Withdraw() */
-static void Withdraw2Normal(client_data, id)
-    XtPointer     client_data;
-    XtIntervalId *id;
+static void 
+Withdraw2Normal (XtPointer client_data, XtIntervalId *id)
 {
     Widget toplevel = (Widget)client_data;
 
@@ -162,11 +153,8 @@ static void Withdraw2Normal(client_data, id)
 }
 
 /* (20) Called at first time the top level window is mapped */
-static void MappedEH(w, client_data, event, dispatch)
-    Widget     w;
-    XtPointer  client_data;
-    XEvent    *event;
-    Boolean   *dispatch;
+static void 
+MappedEH (Widget w, XtPointer client_data, XEvent *event, Boolean *dispatch)
 {
     if (event->type == MapNotify) {
         /* (21) To know the property change of top level window */
@@ -176,11 +164,8 @@ static void MappedEH(w, client_data, event, dispatch)
 }
 
 /* (22) Called when propert of toplevel window is changed */
-static void StateEH(w, client_data, event, dispatch)
-    Widget     w;
-    XtPointer  client_data;
-    XEvent    *event;
-    Boolean   *dispatch;
+static void 
+StateEH (Widget w, XtPointer client_data, XEvent *event, Boolean *dispatch)
 {
     Atom xa_wm_state, actual_type;
     int actual_format;

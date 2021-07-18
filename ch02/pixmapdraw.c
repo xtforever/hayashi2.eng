@@ -16,11 +16,8 @@ static GC gc;
 static Pixmap pixmap;
 static Dimension width, height;
 
-static void DrawEH(w, client_data, event, dispatch)
-    Widget     w;
-    XtPointer  client_data;
-    XEvent    *event;
-    Boolean   *dispatch;
+static void 
+DrawEH (Widget w, XtPointer client_data, XEvent *event, Boolean *dispatch)
 {
     static int x0, y0;  /* start of line */
     int x, y;           /* end of line */
@@ -42,17 +39,14 @@ static void DrawEH(w, client_data, event, dispatch)
 }
 
 /* Copy contents of pixmap onto drawing area when it is exposed */
-static void ExposeCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+ExposeCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     XCopyArea(XtDisplay(w), pixmap, XtWindow(w), gc, 0, 0, width, height, 0, 0);
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, canvas;
@@ -78,7 +72,7 @@ main(argc, argv)
 
     XtRealizeWidget(toplevel);
 
-    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), NULL, NULL);
+    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), 0, NULL);
     XSetLineAttributes(XtDisplay(canvas), gc, 3, LineSolid, CapButt, JoinMiter);
 
     /* check size and depth of drawing area window */

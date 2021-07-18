@@ -38,9 +38,8 @@ static XrmOptionDescRec opt[] = {  /* (6) Custom options */
     {"-right",  "*location", XrmoptionNoArg, "right"},
 };
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, button;

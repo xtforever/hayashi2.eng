@@ -9,61 +9,13 @@
  *      This program can be distributed without fee, provided          *
  *      that the above copyright notice appear in all copies.          *
  ***********************************************************************/
-
+#include <stdlib.h>
 #include <Xm/XmAll.h>
 
-static void CopyCB();
-static void PasteCB();
-
-main(argc, argv)
-    int  argc;
-    char **argv;
-{
-    XtAppContext app_context;
-    Widget toplevel, panel, text, control, copy, paste;
-    Arg al[20];
-    int ac;
-
-    XtSetLanguageProc(NULL, NULL, NULL);
-    ac = 0;
-    toplevel = XtAppInitialize(&app_context, "Clipboard", NULL, 0,
-                               &argc, argv, NULL, al, ac);
-
-    ac = 0;
-    panel = XmCreateRowColumn(toplevel, "panel", al, ac);
-    XtManageChild(panel);
-
-    /* Text input area */
-    ac = 0;
-    text = XmCreateText(panel, "text", al, ac);
-    XtManageChild(text);
-
-    /* Command area */
-    ac = 0;
-    control = XmCreateRowColumn(panel, "control", al, ac);
-    XtManageChild(control);
-
-    /* [Copy] --> copy data to clipboard */
-    ac = 0;
-    copy = XmCreatePushButton(control, "copy", al, ac);
-    XtAddCallback(copy, XmNactivateCallback, CopyCB, text);
-    XtManageChild(copy);
-
-    /* [Paste] --> retrieve data from clipboard */
-    ac = 0;
-    paste = XmCreatePushButton(control, "paste", al, ac);
-    XtAddCallback(paste, XmNactivateCallback, PasteCB, text);
-    XtManageChild(paste);
-
-    XtRealizeWidget(toplevel);
-    XtAppMainLoop(app_context);
-}
 
 /* [Copy] button callback */
-static void CopyCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+CopyCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     Widget text = (Widget)client_data;
     char *string;
@@ -74,7 +26,7 @@ static void CopyCB(w, client_data, call_data)
 
     /* retrieve content of text widget */
     string = XmTextGetString(text);
-    if (string == NULL || *string == NULL) {
+    if (string == NULL || *string == 0 ) {
         XBell(XtDisplay(text), 0);
         return;
     }
@@ -115,10 +67,8 @@ static void CopyCB(w, client_data, call_data)
 }
 
 /* [Paste] button callback */
-static void PasteCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+PasteCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     Widget text = (Widget)client_data;
     unsigned long data_len;
@@ -153,4 +103,47 @@ static void PasteCB(w, client_data, call_data)
 
     /* (4) free the prepared buffer area */
     free(buff);
+}
+
+int 
+main (int argc, char **argv)
+{
+    XtAppContext app_context;
+    Widget toplevel, panel, text, control, copy, paste;
+    Arg al[20];
+    int ac;
+
+    XtSetLanguageProc(NULL, NULL, NULL);
+    ac = 0;
+    toplevel = XtAppInitialize(&app_context, "Clipboard", NULL, 0,
+                               &argc, argv, NULL, al, ac);
+
+    ac = 0;
+    panel = XmCreateRowColumn(toplevel, "panel", al, ac);
+    XtManageChild(panel);
+
+    /* Text input area */
+    ac = 0;
+    text = XmCreateText(panel, "text", al, ac);
+    XtManageChild(text);
+
+    /* Command area */
+    ac = 0;
+    control = XmCreateRowColumn(panel, "control", al, ac);
+    XtManageChild(control);
+
+    /* [Copy] --> copy data to clipboard */
+    ac = 0;
+    copy = XmCreatePushButton(control, "copy", al, ac);
+    XtAddCallback(copy, XmNactivateCallback, CopyCB, text);
+    XtManageChild(copy);
+
+    /* [Paste] --> retrieve data from clipboard */
+    ac = 0;
+    paste = XmCreatePushButton(control, "paste", al, ac);
+    XtAddCallback(paste, XmNactivateCallback, PasteCB, text);
+    XtManageChild(paste);
+
+    XtRealizeWidget(toplevel);
+    XtAppMainLoop(app_context);
 }

@@ -12,8 +12,8 @@
 
 #include <Xm/XmAll.h>
 
-static Widget CreateMenu(parent)
-    Widget parent;
+static Widget 
+CreateMenu (Widget parent)
 {
     Widget  menubar, filemenu, editmenu, secondhelp, helpbutton, helpmenu;
     Arg     al[20];
@@ -90,9 +90,8 @@ static Widget CreateMenu(parent)
     return(menubar);
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, mainwin, menubar, work, text, command, copy, cut, paste;

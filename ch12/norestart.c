@@ -16,9 +16,8 @@ static void OpenCB(), SaveCB();
 static Widget text;
 static Atom xa_wm_delete;
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, field, label, fname, open, save;
@@ -73,10 +72,8 @@ main(argc, argv)
 }
 
 /* [Open] button callback */
-static void OpenCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+OpenCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     Widget textf = (Widget)client_data;
     char *filename;
@@ -99,10 +96,8 @@ static void OpenCB(w, client_data, call_data)
 
 /* [Save] button callback */
 /* (3) this is also called when "Close" button is pressed */
-static void SaveCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+SaveCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     Widget textf = (Widget)client_data;
     char *filename;

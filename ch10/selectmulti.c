@@ -23,9 +23,8 @@ static Boolean owner = False;
 static Atom xa_figure, xa_title;
 static Pixmap pixmap;
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, copy, paste;
@@ -75,10 +74,8 @@ main(argc, argv)
 }
 
 /* Owner: [Copy] button callback */
-static void CopyCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+CopyCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     Pixel fg, bg;
 
@@ -99,9 +96,8 @@ static void CopyCB(w, client_data, call_data)
 }
 
 /* Owner: Called when ownership is lost */
-static void LoseProc(w, selection)
-    Widget w;
-    Atom *selection;
+static void 
+LoseProc (Widget w, Atom *selection)
 {
     Pixel fg, bg;
 
@@ -116,10 +112,8 @@ static void LoseProc(w, selection)
 }
 
 /* Requestor: [Paste] button callback */
-static void PasteCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+PasteCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     /* (1) Start MULTIPLE request */
     XtCreateSelectionRequest(box, XA_PRIMARY);
@@ -138,15 +132,8 @@ static void PasteCB(w, client_data, call_data)
 }
 
 /* Owner: Called when selection data is requested */
-static Boolean ConvertProc(w, selection, target,
-                           type_ret, val_ret, len_ret, format_ret)
-    Widget w;
-    Atom *selection;
-    Atom *target;
-    Atom *type_ret;
-    XtPointer *val_ret;
-    unsigned long *len_ret;
-    int *format_ret;
+static Boolean 
+ConvertProc (Widget w, Atom *selection, Atom *target, Atom *type_ret, XtPointer *val_ret, unsigned long *len_ret, int *format_ret)
 {
     if (*selection != XA_PRIMARY)  /* Handle only "PRIMARY" selection */
         return False;
@@ -184,14 +171,8 @@ static Boolean ConvertProc(w, selection, target,
 }
 
 /* Requestor: Called when selection data is received */
-static void GetValueProc(w, client_data, selection, type, val, len, format)
-    Widget w;
-    XtPointer client_data;
-    Atom *selection;
-    Atom *type;
-    XtPointer val;
-    unsigned long *len;
-    int *format;
+static void 
+GetValueProc (Widget w, XtPointer client_data, Atom *selection, Atom *type, XtPointer val, unsigned long *len, int *format)
 {
     if (*len == 0 || val == NULL) { /* Failed to receive selection data */
         XBell(XtDisplay(w), 0);  /* notify by bell */

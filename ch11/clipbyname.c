@@ -19,9 +19,8 @@ static void CopyByName();
 
 static Widget text;
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, field, label, fname, open, control, copy, paste;
@@ -83,10 +82,8 @@ main(argc, argv)
 }
 
 /* (4) [Open] button callback */
-static void OpenCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+OpenCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     Widget textf = (Widget)client_data;
     char *filename;
@@ -108,10 +105,8 @@ static void OpenCB(w, client_data, call_data)
 }
 
 /* (7) [Copy] button callback */
-static void CopyCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+CopyCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     XmString label;
     long item_id;
@@ -150,11 +145,8 @@ static void CopyCB(w, client_data, call_data)
 }
 
 /* (11) Called when clipbpard data is requested */
-static void CopyByName(w, data_id, private_id, reason)
-    Widget w;
-    int *data_id;
-    int *private_id;
-    int *reason;
+static void 
+CopyByName (Widget w, int *data_id, int *private_id, int *reason)
 {
     char *string;
 
@@ -176,10 +168,8 @@ static void CopyByName(w, data_id, private_id, reason)
 }
 
 /* (15) [Paste] button callback */
-static void PasteCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+PasteCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     char buff[BUFSIZ];
     unsigned long num_bytes;

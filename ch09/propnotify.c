@@ -14,19 +14,16 @@
 
 static Atom atom;
 
-static void NotifyCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+NotifyCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     /* (2) update "_NOTIFY" of root window */
     XChangeProperty(XtDisplay(w), RootWindowOfScreen(XtScreen(w)),
                     atom, XA_STRING, 8, PropModeReplace, NULL, 0);
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, button;

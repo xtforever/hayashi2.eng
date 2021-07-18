@@ -9,7 +9,7 @@
  *      This program can be distributed without fee, provided          *
  *      that the above copyright notice appear in all copies.          *
  ***********************************************************************/
-
+#include <stdlib.h>
 #include <Xm/XmAll.h>
 
 static GC gc;
@@ -22,20 +22,16 @@ static char *colornames[] = {
     "red", "orange", "yellow", "green", "light sea green", "blue", "violet"
 };
 
-static void ExposeCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+ExposeCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     /* copy image to window */
     XPutImage(XtDisplay(w), XtWindow(w), gc, image, 0, 0, 0, 0, width, height);
 }
 
 /* (2) called when button is pressed */
-static void InputCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+InputCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     XmDrawingAreaCallbackStruct *cb = (XmDrawingAreaCallbackStruct *)call_data;
     Widget label = (Widget)client_data;
@@ -66,9 +62,8 @@ static void InputCB(w, client_data, call_data)
     XmStringFree(string);
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, canvas, label;
@@ -115,7 +110,7 @@ main(argc, argv)
 
     XtRealizeWidget(toplevel);
 
-    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), NULL, NULL);
+    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), 0, NULL);
 
     /* Query window information of drawing area */
     XtVaGetValues(canvas, XmNvisual, &visual,

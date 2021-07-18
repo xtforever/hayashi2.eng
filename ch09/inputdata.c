@@ -9,14 +9,17 @@
  *      This program can be distributed without fee, provided          *
  *      that the above copyright notice appear in all copies.          *
  ***********************************************************************/
-
+#include <stdlib.h>
+#include <unistd.h>
 #include <Xm/XmAll.h>
 
 /* (3) Input callback */
-static void InputCB(client_data, source, id)
-    XtPointer  client_data; /* Client data passed when this is registered */
-    int       *source;      /* file descriptor */
-    XtInputId *id;          /* ID of input callback */
+static void 
+InputCB (
+    XtPointer client_data, /* Client data passed when this is registered */
+    int *source,      /* file descriptor */
+    XtInputId *id          /* ID of input callback */
+)
 {
     Widget scale = (Widget)client_data;
     char buff[BUFSIZ];
@@ -27,16 +30,15 @@ static void InputCB(client_data, source, id)
         XtRemoveInput(*id);  /* delete the input callback */
         return;              /* so that this is not called again */
     }
-    if (buff[len-1] == '\n') buff[len-1] = NULL;  /* ignore last newline */
+    if (buff[len-1] == '\n') buff[len-1] = 0;  /* ignore last newline */
 
     /* (5) Set the read value to scale */
     val = atoi(buff);
     XtVaSetValues(scale, XmNvalue, val, NULL);
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget  toplevel, panel, scale;

@@ -17,11 +17,8 @@ static GC gc;
 static int x = -ARC, y;
 
 /* Event handler called on button press and mouse motion */
-static void MoveArcEH(w, client_data, event, dispatch)
-    Widget     w;
-    XtPointer  client_data;
-    XEvent    *event;
-    Boolean   *dispatch;
+static void 
+MoveArcEH (Widget w, XtPointer client_data, XEvent *event, Boolean *dispatch)
 {
     Window destination = (Window)client_data;
 
@@ -52,18 +49,15 @@ static void MoveArcEH(w, client_data, event, dispatch)
 }
 
 /* Redraw the arc at same position when drawing area is exposed */
-static void ExposeCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+ExposeCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     XFillArc(XtDisplay(w), XtWindow(w), gc,
              x - ARC/2, y - ARC/2, ARC, ARC, 0, 360*64);
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, canvas;
@@ -95,17 +89,18 @@ main(argc, argv)
     /* (1) Get the window ID from "_CANVAS_WINDOW" of root window */
     if (XGetWindowProperty(XtDisplay(canvas),
                   RootWindowOfScreen(XtScreen(canvas)), atom, 0, 1, False,
-                  XA_WINDOW, &type, &format, &nitems, &left, &window)
+			   XA_WINDOW, &type, &format, &nitems, &left,
+			   (unsigned char **)&window)
                                             != Success || type != XA_WINDOW)
         fprintf(stderr, "Cannot get window ID from _CANVAS_WINDOW property\n");
 
     /* Register an event handler for button press and mouse motion */
     XtAddEventHandler(canvas, ButtonPressMask | Button1MotionMask, False,
-                      MoveArcEH, *window);
+                      MoveArcEH, (XtPointer)*window);
 
     XtRealizeWidget(toplevel);
 
-    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), NULL, NULL);
+    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), 0, NULL);
     XSetForeground(XtDisplay(canvas), gc, BlackPixelOfScreen(XtScreen(canvas)));
 
     XtAppMainLoop(app_context);

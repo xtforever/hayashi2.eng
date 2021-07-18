@@ -9,7 +9,7 @@
  *      This program can be distributed without fee, provided          *
  *      that the above copyright notice appear in all copies.          *
  ***********************************************************************/
-
+#include <stdlib.h>
 #include <Xm/XmAll.h>
 
 #define _FIG_AND_TITLE   "_FIG_AND_TITLE"
@@ -25,9 +25,8 @@ static void PasteCB();
 static Widget box, figure, title;
 static Pixmap pixmap;
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, copy, paste;
@@ -80,10 +79,8 @@ main(argc, argv)
 }
 
 /* [Copy] button callback */
-static void CopyCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+CopyCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     FigAndTitle fig_title;
     XmString label;
@@ -126,7 +123,8 @@ static void CopyCB(w, client_data, call_data)
     if (XmClipboardCopy(XtDisplay(box), XtWindow(box), item_id,
                         _FIG_AND_TITLE, &fig_title, sizeof(fig_title),
                         private_id, &data_id) != ClipboardSuccess) {
-        XmClipboardCancelCopy(XtDisplay(text), XtWindow(text), item_id);
+//        XmClipboardCancelCopy(XtDisplay(text), XtWindow(text), item_id);
+        XmClipboardCancelCopy(XtDisplay(box), XtWindow(box), item_id);
         XBell(XtDisplay(w), 0);
         XmStringFree(label);
         return;
@@ -143,10 +141,8 @@ static void CopyCB(w, client_data, call_data)
 }
 
 /* [Paste] button callback */
-static void PasteCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+PasteCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     FigAndTitle fig_title;
     unsigned long num_bytes;

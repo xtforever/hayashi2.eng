@@ -28,9 +28,8 @@ static int direction = LtoR;  /* LtoR: left to right, RtoL: right to left */
 static Pixmap front, back;  /* pixmap buffer */
 static Dimension width, height;
 
-static void TimeoutCB(client_data, id)
-    XtPointer     client_data;
-    XtIntervalId *id;
+static void 
+TimeoutCB (XtPointer client_data, XtIntervalId *id)
 {
     Widget w = (Widget)client_data;
     Pixmap tmp;
@@ -74,17 +73,14 @@ static void TimeoutCB(client_data, id)
 }
 
 /* (7) Copy buffer contents when drawing area is exposed */
-static void ExposeCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+ExposeCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     XCopyArea(XtDisplay(w), front, XtWindow(w), gc, 0, 0, width, height, 0, 0);
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, canvas;
@@ -108,7 +104,7 @@ main(argc, argv)
 
     XtRealizeWidget(toplevel);
 
-    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), NULL, NULL);
+    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), 0, NULL);
 
     /* query size and depth of drawing area window */
     XtVaGetValues(canvas, XmNwidth, &width,

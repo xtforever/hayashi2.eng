@@ -13,10 +13,8 @@
 #include <Xm/XmAll.h>
 
 /* Called when list item is double-clicked */
-static void SelectCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+SelectCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     char *text;
     /* Callback struct of list (selected item is cb->item) */
@@ -29,9 +27,8 @@ static void SelectCB(w, client_data, call_data)
     }
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, list;

@@ -27,9 +27,8 @@ static XtResource res[] = {  /* (2) Resource definition structure */
    XtRString, "default"},
 };
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, button1, button2;

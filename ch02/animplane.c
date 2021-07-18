@@ -9,7 +9,7 @@
  *      This program can be distributed without fee, provided          *
  *      that the above copyright notice appear in all copies.          *
  ***********************************************************************/
-
+#include <stdlib.h>
 #include <Xm/XmAll.h>
 
 #define INTERVAL   50    /* Timing for next frame */
@@ -45,9 +45,8 @@ static Boolean which = BUFFER0;  /* draw on buffer0 at first */
 
 static void TimeoutCB();
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, canvas;
@@ -76,7 +75,7 @@ main(argc, argv)
                           XmNheight, &height, NULL);
 
     /* Create GC */
-    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), NULL, NULL);
+    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), 0, NULL);
 
     /* (3) Get default color map */
     colormap = DefaultColormapOfScreen(XtScreen(canvas));
@@ -85,7 +84,7 @@ main(argc, argv)
     if (XAllocColorCells(XtDisplay(canvas), colormap,
                          False, planes, 4, pixels, 1) == 0) {
         fprintf(stderr, "Cannot allocate color cells.\n");
-        exit(1);
+	exit(1);
     }
 
     /* (5) Prepare color array for BUFFER0 */
@@ -144,9 +143,8 @@ main(argc, argv)
     XtAppMainLoop(app_context);
 }
 
-static void TimeoutCB(client_data, id)
-    XtPointer     client_data;
-    XtIntervalId *id;
+static void 
+TimeoutCB (XtPointer client_data, XtIntervalId *id)
 {
     Widget w = (Widget)client_data;
 

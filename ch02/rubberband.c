@@ -9,7 +9,7 @@
  *      This program can be distributed without fee, provided          *
  *      that the above copyright notice appear in all copies.          *
  ***********************************************************************/
-
+#include <stdlib.h>
 #include <Xm/XmAll.h>
 
 static GC gc;
@@ -17,11 +17,8 @@ static Colormap colormap;
 static unsigned long planes[1], pixels[4];
 
 /* Event handler called on mouse operation */
-static void DrawEH(w, client_data, event, dispatch)
-    Widget     w;
-    XtPointer  client_data;
-    XEvent    *event;
-    Boolean   *dispatch;
+static void 
+DrawEH (Widget w, XtPointer client_data, XEvent *event, Boolean *dispatch)
 {
     static int x0, y0;  /* start of line */
     static int x1, y1;  /* end of line */
@@ -76,9 +73,8 @@ static void DrawEH(w, client_data, event, dispatch)
     }
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, canvas;
@@ -107,7 +103,7 @@ main(argc, argv)
     XtRealizeWidget(toplevel);
 
     /* Create Graphics Context */
-    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), NULL, NULL);
+    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), 0, NULL);
 
     /* Get default color map */
     colormap = DefaultColormapOfScreen(XtScreen(canvas));

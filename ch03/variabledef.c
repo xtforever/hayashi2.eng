@@ -21,10 +21,8 @@ typedef struct {  /* (1) Resource value structure */
 static CustomRec data;  /* Prepare a resource value structure */
 
 /* Called when resource is not specified in resource file */
-static DefaultMargin(w, offset, value)
-    Widget    w;
-    int       offset;
-    XrmValue *value;
+static void
+DefaultMargin (Widget w, int offset, XrmValue *value)
 {
     Boolean margin;
 
@@ -43,9 +41,8 @@ static XtResource res[] = {  /* (2) Resource definition structure */
    XtRCallProc, (XtPointer) DefaultMargin},
 };
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, button;

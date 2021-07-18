@@ -45,9 +45,8 @@ static Widget CreateScaleWithMarks(parent, name)
     return scale;
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, scale1, scale2;

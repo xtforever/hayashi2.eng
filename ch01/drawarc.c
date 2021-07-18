@@ -15,10 +15,8 @@
 static GC gc;
 
 /* (5) Draw in event function (callback) */
-static void ExposeCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+ExposeCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     XSetForeground(XtDisplay(w), gc, BlackPixelOfScreen(XtScreen(w)));
     XSetLineAttributes(XtDisplay(w), gc, 3, LineSolid, CapButt, JoinMiter);
@@ -29,9 +27,8 @@ static void ExposeCB(w, client_data, call_data)
     XDrawArc(XtDisplay(w), XtWindow(w), gc, 140, 80, 40, 40, 30 * 64, 120 * 64);
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget   toplevel, panel, canvas;
@@ -58,7 +55,7 @@ main(argc, argv)
     XtRealizeWidget(toplevel); /* (2') Window is created here */
 
     /* (4) Create GC  */
-    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), NULL, NULL);
+    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), 0, NULL);
 
     XtAppMainLoop(app_context);
 }

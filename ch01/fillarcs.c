@@ -14,10 +14,8 @@
 
 static GC gc;
 
-static void ExposeCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+ExposeCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     static XArc arcs[] = {
         { 20, 80, 40, 40,  0 * 64, 360 * 64},
@@ -28,9 +26,8 @@ static void ExposeCB(w, client_data, call_data)
     XFillArcs(XtDisplay(w), XtWindow(w), gc,  arcs, 3);
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget   toplevel, panel, canvas;
@@ -53,7 +50,7 @@ main(argc, argv)
 
     XtRealizeWidget(toplevel);
 
-    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), NULL, NULL);
+    gc = XCreateGC(XtDisplay(canvas), XtWindow(canvas), 0, NULL);
 
     XtAppMainLoop(app_context);
 }

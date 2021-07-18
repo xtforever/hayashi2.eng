@@ -10,15 +10,14 @@
  *      that the above copyright notice appear in all copies.          *
  ***********************************************************************/
 
+#include <wctype.h>
 #include <wchar.h>
 #include <Xm/XmAll.h>
 
 static Widget text, error;
 
-static void CheckTextCB(w, client_data, call_data)
-    Widget    w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+CheckTextCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     wchar_t *wcs;
     size_t length;
@@ -46,12 +45,11 @@ static void CheckTextCB(w, client_data, call_data)
         XtManageChild(error); /* show error dialog */
     }
 
-    XtFree(wcs); /* Free the retrieved text */
+    XtFree((char *)wcs); /* Free the retrieved text */
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, button;

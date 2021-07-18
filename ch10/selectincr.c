@@ -25,9 +25,8 @@ static void GetValueProc();
 static Widget text;
 static char *string;
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, field, label, fname, open, control, copy, paste;
@@ -89,10 +88,8 @@ main(argc, argv)
 }
 
 /* (4) [Open] button callback */
-static void OpenCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+OpenCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     Widget textf = (Widget)client_data;
     char *filename;
@@ -114,10 +111,8 @@ static void OpenCB(w, client_data, call_data)
 }
 
 /* (7) Owner: [Copy] button callback */
-static void CopyCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+CopyCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     /* (8) Own the selection (register callbacks) */
     if (XtOwnSelectionIncremental(text, XA_PRIMARY,
@@ -129,10 +124,8 @@ static void CopyCB(w, client_data, call_data)
 }
 
 /* Owner: Called when ownership is lost */
-static void LoseIncProc(w, selection, client_data)
-    Widget w;
-    Atom *selection;
-    XtPointer client_data;
+static void 
+LoseIncProc (Widget w, Atom *selection, XtPointer client_data)
 {
     /* (10) If ownership is lost, reset the inversion */
     if (*selection == XA_PRIMARY)
@@ -140,10 +133,8 @@ static void LoseIncProc(w, selection, client_data)
 }
 
 /* (11) Requestor: [Paste] button callback */
-static void PasteCB(w, client_data, call_data)
-    Widget w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+PasteCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     /* (12) Request selection data (the data will be received in callback) */
     XtGetSelectionValueIncremental(text, XA_PRIMARY, XA_STRING, GetValueProc,
@@ -151,19 +142,8 @@ static void PasteCB(w, client_data, call_data)
 }
 
 /* (13) Owner: Called when selection data is requested */
-static Boolean ConvertIncProc(w, selection, target,
-                              type_ret, val_ret, len_ret, format_ret,
-                              max_len, client_data, request_id)
-    Widget w;
-    Atom *selection;
-    Atom *target;
-    Atom *type_ret;
-    XtPointer *val_ret;
-    unsigned long *len_ret;
-    int *format_ret;
-    unsigned long *max_len;
-    XtPointer client_data;
-    XtRequestId *request_id;
+static Boolean 
+ConvertIncProc (Widget w, Atom *selection, Atom *target, Atom *type_ret, XtPointer *val_ret, unsigned long *len_ret, int *format_ret, unsigned long *max_len, XtPointer client_data, XtRequestId *request_id)
 {
     static char *p;
     static Boolean start = True;
@@ -202,14 +182,8 @@ static Boolean ConvertIncProc(w, selection, target,
 }
 
 /* (19) Requestor: Called when selection data is received */
-static void GetValueProc(w, client_data, selection, type, val, len, format)
-    Widget w;
-    XtPointer client_data;
-    Atom *selection;
-    Atom *type;
-    XtPointer val;
-    unsigned long *len;
-    int *format;
+static void 
+GetValueProc (Widget w, XtPointer client_data, Atom *selection, Atom *type, XtPointer val, unsigned long *len, int *format)
 {
     static Boolean start = True;
 
@@ -236,24 +210,16 @@ static void GetValueProc(w, client_data, selection, type, val, len, format)
 }
 
 /* (23) Owner: Called after requestor received the selection data */
-static void DoneIncProc(w, selection, target, request_id, client_data)
-    Widget w;
-    Atom *selection;
-    Atom *target;
-    XtRequestId *request_id;
-    XtPointer client_data;
+static void 
+DoneIncProc (Widget w, Atom *selection, Atom *target, XtRequestId *request_id, XtPointer client_data)
 {
     /* (24) Free the transferred data */
     XtFree(string);
 }
 
 /* (25) Owner: Called when the transfer is cancelled */
-static void CancelProc(w, selection, target, request_id, client_data)
-    Widget w;
-    Atom *selection;
-    Atom *target;
-    XtRequestId *request_id;
-    XtPointer client_data;
+static void 
+CancelProc (Widget w, Atom *selection, Atom *target, XtRequestId *request_id, XtPointer client_data)
 {
     /* (26) Free the transferred data */
     XtFree(string);

@@ -12,19 +12,16 @@
 
 #include <Xm/XmAll.h>
 
-static void ShowDialogCB(w, client_data, call_data)
-    Widget    w;
-    XtPointer client_data;
-    XtPointer call_data;
+static void 
+ShowDialogCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     Widget dialog = (Widget) client_data;
 
     XtManageChild(dialog);
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, button, dialog, nobutton;

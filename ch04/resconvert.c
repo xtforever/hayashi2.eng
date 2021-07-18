@@ -15,10 +15,8 @@
 static Widget tgt_label, color_text, label_text;
 
 /* [Apply] Button callback */
-static ChangeCB(w, client_data, call_data)
-    Widget    w;
-    XtPointer client_data;
-    XtPointer call_data;
+static 
+void ChangeCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
     XrmValue  source, dest;           /* Resource value structure */
     char     *new_color, *new_label;  /* New color name and label (source) */
@@ -28,7 +26,7 @@ static ChangeCB(w, client_data, call_data)
     /* (A) Input new color name */
     new_color = XmTextFieldGetString(color_text);
     /* Without input, set focus to appropreate input area and ring a bell */
-    if (new_color == NULL || *new_color == NULL) {
+    if (new_color == NULL || *new_color == 0 ) {
         XmProcessTraversal(color_text, XmTRAVERSE_CURRENT);
         XBell(XtDisplay(w), 0);
         return;
@@ -36,7 +34,7 @@ static ChangeCB(w, client_data, call_data)
     /* (B) Input new label string */
     new_label = XmTextFieldGetString(label_text);
     /* Without input, set focus to appropreate input area and ring a bell */
-    if (new_label == NULL || *new_label == NULL) {
+    if (new_label == NULL || *new_label == 0) {
         XmProcessTraversal(label_text, XmTRAVERSE_CURRENT);
         XBell(XtDisplay(w), 0);
         return;
@@ -46,7 +44,7 @@ static ChangeCB(w, client_data, call_data)
     source.size = strlen(new_color) + 1;  /* size of source data */
     source.addr = new_color;              /* source data */
     dest.size = sizeof(Pixel);     /* size of target data (integer) */
-    dest.addr = &pixel;            /* storage for target data */
+    dest.addr = (XtPointer)&pixel;            /* storage for target data */
     /* (C2) Convert color name (string) to Pixel value */
     if (!XtConvertAndStore(w, XtRString, &source, XtRPixel, &dest)) {
         /* If conversion fail, set fucos to appropreate input area and bell */
@@ -59,7 +57,7 @@ static ChangeCB(w, client_data, call_data)
     source.size = strlen(new_label) + 1;  /* size of source data */
     source.addr = new_label;       /* source data */
     dest.size = sizeof(XmString);  /* size of target data (pointer) */
-    dest.addr = &xmstr;             /* storage for target data */
+    dest.addr = (XtPointer)&xmstr;             /* storage for target data */
     /* (D2) Convert label (string) to compound string (XmString) */
     if (!XtConvertAndStore(w, XtRString, &source, XmRXmString, &dest)) {
         XmProcessTraversal(label_text, XmTRAVERSE_CURRENT);
@@ -77,9 +75,8 @@ static ChangeCB(w, client_data, call_data)
     XmStringFree(xmstr);
 }
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget toplevel, panel, field, button, color_title, label_title;

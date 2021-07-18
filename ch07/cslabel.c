@@ -9,12 +9,11 @@
  *      This program can be distributed without fee, provided          *
  *      that the above copyright notice appear in all copies.          *
  ***********************************************************************/
-
+#include <stdlib.h>
 #include <Xm/XmAll.h>
 
-main(argc, argv)
-    int  argc;
-    char **argv;
+int 
+main (int argc, char **argv)
 {
     XtAppContext app_context;
     Widget   toplevel, label;
@@ -27,9 +26,12 @@ main(argc, argv)
     ac = 0;
     toplevel = XtAppInitialize(&app_context, "Cslabel", NULL, 0,
                                &argc, argv, NULL, al, ac);
-
-    text = malloc(strlen(argv[1])); /* This text is allocated storage */
-    strcpy(text, argv[1]);
+    if (argc < 1 ) 
+      text=strdup("need example text on commandline");
+    else
+      text=strdup(argv[1]);
+    //    text = malloc(strlen(argv[1])); /* This text is allocated storage */
+    //    strcpy(text, argv[1]);
     string = XmStringCreateLocalized(text); /*(1) Create compound string */
     free(text);  /* (2) free the text */
 
