@@ -92,7 +92,6 @@ main (int argc, char **argv)
         ac = 0;
         sprintf(wname, "scale%d", i);
         scales[i] = XmCreateScale(control, wname, al, ac);
-	foo[i]=i;
 	XtAddCallback(scales[i], XmNdragCallback, ChangeColorCB,(XtPointer)(intptr_t)i);
         XtAddCallback(scales[i], XmNvalueChangedCallback, ChangeColorCB,(XtPointer)(intptr_t)i);
 
