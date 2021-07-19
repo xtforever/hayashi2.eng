@@ -10,6 +10,7 @@
  *      that the above copyright notice appear in all copies.          *
  ***********************************************************************/
 
+#include <stdint.h>
 #include <Xm/XmAll.h>
 
 static Widget button;
@@ -46,7 +47,7 @@ main (int argc, char **argv)
     /* (3) activate protocol and register callback for each menu number */
     for (menu_no = 1; menu_no <= 3; menu_no++) {
         XmActivateProtocol(toplevel, xa_mwm_msg, menu_no);
-        XmAddProtocolCallback(toplevel, xa_mwm_msg, menu_no, MenuCB, menu_no);
+        XmAddProtocolCallback(toplevel, xa_mwm_msg, menu_no, MenuCB, (XtPointer)(intptr_t)menu_no);
     }
 
     ac = 0;
@@ -61,7 +62,7 @@ main (int argc, char **argv)
 static void 
 MenuCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
-    int menu_no = (int)client_data;  /* selected menu number */
+    intptr_t menu_no = (intptr_t)client_data;  /* selected menu number */
     char buff[40];
     XmString string;
 
