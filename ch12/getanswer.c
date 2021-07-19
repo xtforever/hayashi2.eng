@@ -10,12 +10,13 @@
  *      that the above copyright notice appear in all copies.          *
  ***********************************************************************/
 #include <stdlib.h>
+#include <stdint.h>
 #include <Xm/XmAll.h>
 
 static void 
 DialogCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
-    Boolean answer = (Boolean)client_data;
+    intptr_t answer = (intptr_t)client_data;
     /* (7) Select return value in accordance with the answer from user */
     if (answer) exit(0);  /* the user answered [Yes] */
     else        exit(1);  /* the user answered [No] */
@@ -30,7 +31,7 @@ main (int argc, char **argv)
     int ac;
     Position x, y;
     XmString string;
-
+    
     XtSetLanguageProc(NULL, NULL, NULL);
     ac = 0;
     /* (1) Do not show toplevel window */
@@ -64,8 +65,8 @@ main (int argc, char **argv)
     XtManageChild(dialog);
 
     /* (6) Register callbacks for [Yes] and [No] button */
-    XtAddCallback(dialog, XmNokCallback, DialogCB, True);
-    XtAddCallback(dialog, XmNcancelCallback, DialogCB, False);
+    XtAddCallback(dialog, XmNokCallback, DialogCB, (XtPointer)(intptr_t)True);
+    XtAddCallback(dialog, XmNcancelCallback, DialogCB, (XtPointer)(intptr_t)False);
 
     XmStringFree(string);
 
