@@ -10,6 +10,7 @@
  *      that the above copyright notice appear in all copies.          *
  ***********************************************************************/
 
+#include <stdint.h>
 #include <nl_types.h>
 #include <Xm/XmAll.h>
 
@@ -22,7 +23,7 @@ static nl_catd catd;
 static void 
 FileMenuCB (Widget w, XtPointer client_data, XtPointer call_data)
 {
-    int menu_item = (int)client_data;  /* selected menu number */
+    intptr_t menu_item = (intptr_t)client_data;  /* selected menu number */
     char *text;
     XmString string;
 
