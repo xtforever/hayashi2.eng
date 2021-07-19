@@ -26,7 +26,7 @@ main (int argc, char **argv)
     ac = 0;
     toplevel = XtAppInitialize(&app_context, "Cslabel", NULL, 0,
                                &argc, argv, NULL, al, ac);
-    if (argc < 1 ) 
+    if (argc < 2 ) 
       text=strdup("need example text on commandline");
     else
       text=strdup(argv[1]);
