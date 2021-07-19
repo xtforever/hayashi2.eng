@@ -17,6 +17,15 @@
 static GC gc;
 static XmFontList fontlist[3];
 static XmString string[100];
+static String fallback_resources[] = {
+  "*canvas.topAttachment:       ATTACH_FORM",
+  "*canvas.bottomAttachment:    ATTACH_FORM",
+  "*canvas.leftAttachment:      ATTACH_FORM",
+  "*canvas.rightAttachment:     ATTACH_FORM",
+  "*canvas.width:               200",
+  "*canvas.height:              200",
+  NULL
+};
 
 /* (1) Drawn text.  Newline at NULL.  Two NULL at end */
 static char *text[] = { "When", "drawing", "multi-line", NULL,
@@ -79,7 +88,7 @@ main (int argc, char **argv)
     XtSetLanguageProc(NULL, NULL, NULL);
     ac = 0;
     toplevel = XtAppInitialize(&app_context, "XMdraw", NULL, 0,
-                               &argc, argv, NULL, al, ac);
+                               &argc, argv, fallback_resources, al, ac);
 
     ac = 0;
     panel = XmCreateForm(toplevel, "panel", al, ac);

@@ -11,6 +11,17 @@
  ***********************************************************************/
 
 #include <Xm/XmAll.h>
+static String fallback_resources[] = {
+"*canvas.topAttachment:       ATTACH_FORM",
+"*canvas.bottomAttachment:    ATTACH_FORM",
+"*canvas.leftAttachment:      ATTACH_FORM",
+"*canvas.rightAttachment:     ATTACH_FORM",
+"*canvas.width:               200",
+"*canvas.height:              200",
+"Actdraw*canvas.translations:        #replace  <Btn1Down>   : move-arc() \n"
+"  <Btn1Motion> : move-arc()",
+  NULL
+};
 
 #define ARC 10
 static GC gc;
@@ -63,7 +74,7 @@ main (int argc, char **argv)
     XtSetLanguageProc(NULL, NULL, NULL);
     ac = 0;
     toplevel = XtAppInitialize(&app_context, "Actdraw", NULL, 0,
-                               &argc, argv, NULL, al, ac);
+                               &argc, argv, fallback_resources, al, ac);
     /* (6) Register action table */
     XtAppAddActions(app_context, actions, XtNumber(actions));
     ac = 0;

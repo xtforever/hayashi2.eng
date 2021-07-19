@@ -11,6 +11,15 @@
  ***********************************************************************/
 
 #include <Xm/XmAll.h>
+static String fallback_resources[] = {
+  "*canvas.topAttachment:       ATTACH_FORM",
+  "*canvas.bottomAttachment:    ATTACH_FORM",
+  "*canvas.leftAttachment:      ATTACH_FORM",
+  "*canvas.rightAttachment:     ATTACH_FORM",
+  "*canvas.width:               200",
+  "*canvas.height:              200",
+  NULL
+};
 
 static GC gc;
 
@@ -39,7 +48,7 @@ main (int argc, char **argv)
     ac = 0;
     /* (1) Initialize X Toolkit (open display) */
     toplevel = XtAppInitialize(&app_context, "XMdraw", NULL, 0,
-                               &argc, argv, NULL, al, ac);
+                               &argc, argv, fallback_resources, al, ac);
 
     ac = 0;
     panel = XmCreateForm(toplevel, "panel", al, ac);

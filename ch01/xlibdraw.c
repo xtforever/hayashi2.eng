@@ -11,6 +11,7 @@
  ***********************************************************************/
 
 #include <X11/Xlib.h>
+#include <X11/Intrinsic.h>
 
 #define ARC 10
 #define X 20
@@ -19,6 +20,20 @@ static GC gc;
 static unsigned int width, height;
 static unsigned int rw = 0, rh = 0;
 static int px, py;
+
+
+
+static
+String
+fallback_resources[] = {
+  "*canvas.topAttachment:       ATTACH_FORM",
+  "*canvas.bottomAttachment:    ATTACH_FORM",
+  "*canvas.leftAttachment:      ATTACH_FORM",
+  "*canvas.rightAttachment:     ATTACH_FORM",
+  "*canvas.width:               200",
+  "*canvas.height:              200",
+  NULL
+};
 
 /* Recalculate position and size of graphics */
 static void 

@@ -13,6 +13,15 @@
 #include <Xm/XmAll.h>
 
 static GC gc;
+static String fallback_resources[] = {
+  "*canvas.topAttachment:       ATTACH_FORM",
+  "*canvas.bottomAttachment:    ATTACH_FORM",
+  "*canvas.leftAttachment:      ATTACH_FORM",
+  "*canvas.rightAttachment:     ATTACH_FORM",
+  "*canvas.width:               200",
+  "*canvas.height:              200",
+  NULL
+};
 
 static void 
 ExposeCB (Widget w, XtPointer client_data, XtPointer call_data)
@@ -40,7 +49,7 @@ main (int argc, char **argv)
     XtSetLanguageProc(NULL, NULL, NULL);
     ac = 0;
     toplevel = XtAppInitialize(&app_context, "XMdraw", NULL, 0,
-                               &argc, argv, NULL, al, ac);
+                               &argc, argv, fallback_resources, al, ac);
 
     ac = 0;
     panel = XmCreateForm(toplevel, "panel", al, ac);
